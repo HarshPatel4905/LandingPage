@@ -7661,7 +7661,7 @@ textarea.form-control-lg {
 }
 
 .h-9px {
-  height: 9px !important;
+  height: 50px !important;
 }
 
 .h-10px {
@@ -7669,7 +7669,7 @@ textarea.form-control-lg {
 }
 
 .h-15px {
-  height: 15px !important;
+  height: 60px !important;
 }
 
 .h-20px {
@@ -19608,7 +19608,7 @@ textarea.form-control-lg {
   }
 
   .h-lg-40px {
-    height: 40px !important;
+    height: 60px !important;
   }
 
   .h-lg-45px {
@@ -46822,7 +46822,7 @@ body.page-bg-image-lg {
 }
 .header-fixed:not([data-kt-sticky-header=on]) .header .btn.btn-custom .svg-icon svg [fill]:not(.permanent):not(g) {
   transition: fill 0.3s ease;
-  fill: #fff;
+  fill: black;
 }
 .header-fixed:not([data-kt-sticky-header=on]) .header .btn.btn-custom .svg-icon svg:hover [fill]:not(.permanent):not(g) {
   transition: fill 0.3s ease;
@@ -46874,7 +46874,7 @@ body.page-bg-image-lg {
     align-items: stretch;
     position: relative;
     z-index: 2;
-    height: 80px;
+    height: 90px;
     transition: left ease;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
@@ -46903,7 +46903,7 @@ body.page-bg-image-lg {
     color: #fff;
   }
   .header-fixed:not([data-kt-sticky-header=on]) .header .header-menu .menu > .menu-item > .menu-link .menu-title {
-    color: #fff;
+    color: rgba(0,0,0,.5);
   }
   .header-fixed:not([data-kt-sticky-header=on]) .header .header-menu .menu > .menu-item > .menu-link .menu-icon i {
     color: #4A4B68;
@@ -46936,7 +46936,7 @@ body.page-bg-image-lg {
     color: #ffffff;
   }
   .header-fixed:not([data-kt-sticky-header=on]) .header .header-menu .menu > .menu-item.hover > .menu-link:not(.disabled):not(.active) .menu-title, .header-fixed:not([data-kt-sticky-header=on]) .header .header-menu .menu > .menu-item > .menu-link:hover:not(.disabled):not(.active) .menu-title {
-    color: #ffffff;
+    color: #01185c;
   }
   .header-fixed:not([data-kt-sticky-header=on]) .header .header-menu .menu > .menu-item.hover > .menu-link:not(.disabled):not(.active) .menu-icon i, .header-fixed:not([data-kt-sticky-header=on]) .header .header-menu .menu > .menu-item > .menu-link:hover:not(.disabled):not(.active) .menu-icon i {
     color: #ffffff;

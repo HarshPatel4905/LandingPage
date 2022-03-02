@@ -33,10 +33,15 @@
               "src/styles.css",
               "src/assets/fullcalendar.bundle.css",
               "src/assets/plugins.bundle.css",
-              "src/assets/style.bundle.css"
+              "src/assets/style.bundle.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [
-
+              "./src/assets/fullcalendar.bundle.js",
+              "./src/assets/plugins.bundle.js",
+              "./src/assets/scripts.bundle.js",
+              "./src/assets/widgets.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           },
           "configurations": {
