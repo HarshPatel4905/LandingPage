@@ -34,7 +34,9 @@
               "src/assets/fullcalendar.bundle.css",
               "src/assets/plugins.bundle.css",
               "src/assets/style.bundle.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css" 
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/ag-grid-community/dist/styles/ag-grid.css",
+              "node_modules/ag-grid-community/dist/styles/ag-theme-alpine.css"
             ],
             "scripts": [
               "./src/assets/fullcalendar.bundle.js",
