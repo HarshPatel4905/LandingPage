@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+
+
+
+
+
+.product-rating {
+  font-size: 0px
+}
+
+.stars i {
+  font-size: 18px;
+  color: #28a745
+}
+
+.rating-text {
+  margin-top: 10px
+}
+
+.a-item-hover{
+  background: linear-gradient(to right, #01185c, #01185c 50%, rgba(0,0,0,.60) 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 500ms ease;
+}
+.a-item-hover:hover{
+  background-position: 0 100%;
+  font-weight: bold;
+
+}
+
+.showme{ 
+  display: block;
+  }
+.showme1{ 
+    display: none;
+    }
+.buttonshowme{
+  display: none;
+}
+
+    
+
+.showhim{
+  height: fit-content;
+
+}
+.showhim:hover .showme{
+  display : none;
+  
+  }
+.showhim:hover .showme1{
+    display : block;
+    
+    }
+
+    
+.buttonnew{
+  
+  padding: 2px 40px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #1184e2;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px #999;
+  margin-bottom: 20px;
+}
+.buttonnew:hover {background-color: #01185c}
+
+.buttonnew:active {
+  background-color: #01185c;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
