@@ -34,29 +34,40 @@
 }
 
 .showme{ 
+  opacity: 1;
   display: block;
   }
 .showme1{ 
-    display: none;
+    opacity: 0;
+    clear: both;
+    height: 0;
+    overflow: hidden;
+    transition: all .3s ease .15s;
+    transition-duration: 2s;
+    
     }
+
 .buttonshowme{
+  opacity: 0;
   display: none;
 }
 
     
 
 .showhim{
-  height: fit-content;
 
 }
 .showhim:hover .showme{
-  display : none;
-  
+  opacity: 0;
+  display: none;
   }
 .showhim:hover .showme1{
-    display : block;
-    
+    opacity: 1;
+    display: block;
+    height: fit-content;
     }
+
+
 
     
 .buttonnew{
