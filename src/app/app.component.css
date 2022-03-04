@@ -39,6 +39,22 @@
     padding-bottom: 30px;
     color: #01185c;  
   }
+  .buttonnew{
+    
+    padding: 2px 40px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #1184e2;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px #999;
+    margin-bottom: 20px;
+   
+  }
 }
 
 .btn-about{
@@ -92,9 +108,11 @@
   color: #fff;
   background-color: #1184e2;
   border: none;
-  border-radius: 10px;
-  box-shadow: 0 4px #999;
+  border-radius: 5px;
+  box-shadow: 3px 4px 5px #999;
   margin-bottom: 20px;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 .buttonnew:hover {background-color: #01185c}
 
