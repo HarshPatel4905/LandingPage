@@ -33,6 +33,17 @@
 
 }
 
+@media (min-width: 992px) {
+  .btn-about{
+    margin: 20px 0px 12px 0px;
+    padding-bottom: 30px;
+    color: #01185c;  
+  }
+}
+
+.btn-about{
+}
+
 .showme{ 
   opacity: 1;
   display: block;
