@@ -34,7 +34,7 @@
               "src/assets/fullcalendar.bundle.css",
               "src/assets/plugins.bundle.css",
               "src/assets/style.bundle.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "src/assets/sass/components/_variables.scss"
             ],
             "scripts": [
               "./src/assets/fullcalendar.bundle.js",

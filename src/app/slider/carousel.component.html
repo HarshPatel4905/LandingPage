@@ -1,51 +1,97 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
- <meta charset="utf-8">
- <link rel="stylesheet" href="carousel.component.css">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="carousel.component.css">
 </head>
+
 <body>
- <div class="wrapper">
- <section id="section1">
- <a href="#section3" class="arrow__btn" style="border-radius: 10px;">‹</a>
- <div class="item">
- <img style="border-radius: 10px;" src="https://occ-0-1567-1123.1.nflxso.net/dnm/api/v5/rendition/412e4119fb212e3ca9f1add558e2e7fed42f8fb4/AAAABRvngexxF8H1-OzRWFSj6ddD-aB93tTBP9kMNz3cIVfuIfLEP1E_0saiNAwOtrM6xSOXvoiSCMsihWSkW0dq808-R7_lBnr6WHbjkKBX6I3sD0uCcS8kSPbRjEDdG8CeeVXEAEV6spQ.webp">
- </div>
- <div class="item">
- <img style="border-radius: 10px;" src="https://occ-0-243-299.1.nflxso.net/dnm/api/v5/rendition/412e4119fb212e3ca9f1add558e2e7fed42f8fb4/AAAABZEK-7pZ1H5FD4cTyUb9qB_KeyJGz5p-kfPhCFv4GU_3mbdm8Xfsy4IBchlG9PFNdGff8cBNPaeMra72VFnot41nt0y3e8RLgaVwwh3UvyM2H2_MkmadWbQUeGuf811K7-cxJJh7gA.jpg">
- </div>
- 
- <a href="#section2" class="arrow__btn" style="border-radius: 10px;">›</a>
- </section>
+  <!-- <div class="wrapper">
+    <section id="section1">
+      <a href="#section3" class="arrow__btn" style="border-radius: 10px;">‹</a>
+      <div class="item">
+        <img style="border-radius: 10px;"
+          src="https://occ-0-1567-1123.1.nflxso.net/dnm/api/v5/rendition/412e4119fb212e3ca9f1add558e2e7fed42f8fb4/AAAABRvngexxF8H1-OzRWFSj6ddD-aB93tTBP9kMNz3cIVfuIfLEP1E_0saiNAwOtrM6xSOXvoiSCMsihWSkW0dq808-R7_lBnr6WHbjkKBX6I3sD0uCcS8kSPbRjEDdG8CeeVXEAEV6spQ.webp">
+        <img style="border-radius: 10px;"
+          src="https://occ-0-243-299.1.nflxso.net/dnm/api/v5/rendition/412e4119fb212e3ca9f1add558e2e7fed42f8fb4/AAAABZEK-7pZ1H5FD4cTyUb9qB_KeyJGz5p-kfPhCFv4GU_3mbdm8Xfsy4IBchlG9PFNdGff8cBNPaeMra72VFnot41nt0y3e8RLgaVwwh3UvyM2H2_MkmadWbQUeGuf811K7-cxJJh7gA.jpg">
+      </div>
+
+      <a href="#section2" class="arrow__btn" style="border-radius: 10px;">›</a>
+    </section>
 
 
 
- <section id="section2">
- <a href="#section1" class="arrow__btn" id="prev1" style="border-radius: 10px;">‹</a>
- <div class="item">
- <img style="border-radius: 10px;" src="https://occ-0-243-299.1.nflxso.net/dnm/api/v5/rendition/412e4119fb212e3ca9f1add558e2e7fed42f8fb4/AAAABVopDZ5Fy9_fk_HO5WxHTXKKjKhtWFupbSjuvPwfLK_vytzon4EwRUdGgYJ34JwPxOTK_NkV3aXfkULMB0Dcct-FyfqzH-X44VXuRMp4QeBHlvKwWeZFpZlGdItPzmmg4scmwhG7SQ.jpg">
- </div>
- <div class="item">
- <img style="border-radius: 10px;" src="https://occ-0-243-299.1.nflxso.net/dnm/api/v5/rendition/412e4119fb212e3ca9f1add558e2e7fed42f8fb4/AAAABTOj1-116yVcgKWMU2dI3GFR4x0fSkiGsqtLLeLUxRR7STaksjAqBTrYlTfrB8nIGnGvXksi0ewXAhVGg6-pLxpFOIfcpjK-pf8D5xehFZo5a6vJbo4L0AGbrzglbyUoq255QBJgRQ.jpg">
- </div>
- 
- <a href="#section3" class="arrow__btn" style="border-radius: 10px;">›</a>
- </section>
+    <section id="section2">
+      <a href="#section1" class="arrow__btn" id="prev1" style="border-radius: 10px;">‹</a>
+      <div class="item">
+        <img style="border-radius: 10px;"
+          src="https://occ-0-243-299.1.nflxso.net/dnm/api/v5/rendition/412e4119fb212e3ca9f1add558e2e7fed42f8fb4/AAAABVopDZ5Fy9_fk_HO5WxHTXKKjKhtWFupbSjuvPwfLK_vytzon4EwRUdGgYJ34JwPxOTK_NkV3aXfkULMB0Dcct-FyfqzH-X44VXuRMp4QeBHlvKwWeZFpZlGdItPzmmg4scmwhG7SQ.jpg">
+        <img style="border-radius: 10px;"
+          src="https://occ-0-243-299.1.nflxso.net/dnm/api/v5/rendition/412e4119fb212e3ca9f1add558e2e7fed42f8fb4/AAAABTOj1-116yVcgKWMU2dI3GFR4x0fSkiGsqtLLeLUxRR7STaksjAqBTrYlTfrB8nIGnGvXksi0ewXAhVGg6-pLxpFOIfcpjK-pf8D5xehFZo5a6vJbo4L0AGbrzglbyUoq255QBJgRQ.jpg">
+      </div>
+
+      <a href="#section3" class="arrow__btn" style="border-radius: 10px;">›</a>
+    </section>
 
 
 
- <section id="section3">
- <a href="#section2" class="arrow__btn" style="border-radius: 10px;">‹</a>
- <div class="item">
- <img style="border-radius: 10px;" src="https://occ-0-243-299.1.nflxso.net/dnm/api/v5/rendition/412e4119fb212e3ca9f1add558e2e7fed42f8fb4/AAAABRr4YxdaABuAuH_3FmSQZn7BCvLp-UUPsXE9MiYpvFP3CSUHV2zOew5oVqKqqdaOd3tbFVS0Uf67uIs7_eZydlCghg4nK0nMatRpPImABwTOhnNzCLCxdKrua7pPIcPCZqBYTeAO5g.jpg">
- </div>
- <div class="item">
- <img style="border-radius: 10px;" src="https://occ-0-243-299.1.nflxso.net/dnm/api/v5/rendition/412e4119fb212e3ca9f1add558e2e7fed42f8fb4/AAAABTyWK1MKaw8GcObtz47R2Tj7wkLJ7qQu9tk6TVpcoyxpzD4B-zZ569bQ5vGrREBL-MWFkGilXUwy7tCDaj2XOGkUB4RsbbFAmp9NgSr6lygMpUGNHSlyfrFbUORsRkrxSIoh_ggOvg.jpg">
- </div>
- 
- <a href="#section1" class="arrow__btn" style="border-radius: 10px;">›</a>
- </section>
- </div>
+    <section id="section3">
+      <a href="#section2" class="arrow__btn" style="border-radius: 10px;">‹</a>
+      <div class="item">
+        <img style="border-radius: 10px;"
+          src="https://occ-0-243-299.1.nflxso.net/dnm/api/v5/rendition/412e4119fb212e3ca9f1add558e2e7fed42f8fb4/AAAABRr4YxdaABuAuH_3FmSQZn7BCvLp-UUPsXE9MiYpvFP3CSUHV2zOew5oVqKqqdaOd3tbFVS0Uf67uIs7_eZydlCghg4nK0nMatRpPImABwTOhnNzCLCxdKrua7pPIcPCZqBYTeAO5g.jpg">
+
+
+        <img style="border-radius: 10px;"
+          src="https://occ-0-243-299.1.nflxso.net/dnm/api/v5/rendition/412e4119fb212e3ca9f1add558e2e7fed42f8fb4/AAAABTyWK1MKaw8GcObtz47R2Tj7wkLJ7qQu9tk6TVpcoyxpzD4B-zZ569bQ5vGrREBL-MWFkGilXUwy7tCDaj2XOGkUB4RsbbFAmp9NgSr6lygMpUGNHSlyfrFbUORsRkrxSIoh_ggOvg.jpg">
+      </div>
+
+      <a href="#section1" class="arrow__btn" style="border-radius: 10px;">›</a>
+    </section>
+  </div> -->
+
+  <div id="kt_carousel_1_carousel" class="carousel carousel-custom slide" data-bs-ride="carousel"
+    data-bs-interval="2000">
+    <!--begin::Heading-->
+    <div class="d-flex align-items-center justify-content-between flex-wrap">
+      <!--begin::Label-->
+      <span class="fs-4 fw-bolder pe-2"></span>
+      <!--end::Label-->
+
+      <!--begin::Carousel Indicators-->
+      <ol class="p-0 m-0 carousel-indicators carousel-indicators-dots">
+        <li data-bs-target="#kt_carousel_1_carousel" data-bs-slide-to="0" class="ms-1 active"></li>
+        <li data-bs-target="#kt_carousel_1_carousel" data-bs-slide-to="1" class="ms-1"></li>
+        <li data-bs-target="#kt_carousel_1_carousel" data-bs-slide-to="2" class="ms-1"></li>
+      </ol>
+      <!--end::Carousel Indicators-->
+    </div>
+    <!--end::Heading-->
+
+    <!--begin::Carousel-->
+    <div class="carousel-inner pt-8">
+      <!--begin::Item-->
+      <div class="carousel-item active">
+        Hello1
+      </div>
+      <!--end::Item-->
+
+      <!--begin::Item-->
+      <div class="carousel-item">
+        Hello2
+      </div>
+      <!--end::Item-->
+
+      <!--begin::Item-->
+      <div class="carousel-item">
+        Hello3
+      </div>
+      <!--end::Item-->
+    </div>
+    <!--end::Carousel-->
+  </div>
 
 </body>
+
 </html>

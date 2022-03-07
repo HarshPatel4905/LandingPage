@@ -39,7 +39,7 @@ License: For each use you must have a valid license purchased only from above li
   <link href="/assets/plugins.bundle.css" rel="stylesheet" type="text/css" />
   <link href="/assets/style.bundle.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  
+
   <!--end::Global Stylesheets Bundle-->
 </head>
 <!--end::Head-->
@@ -93,7 +93,8 @@ License: For each use you must have a valid license purchased only from above li
           <div class="container-xxl d-flex align-items-center">
             <!--begin::Heaeder menu toggle-->
             <div class="d-flex align-items-center d-lg-none ms-n2 me-3" title="Show aside menu">
-              <div class="btn btn-icon btn-custom w-30px h-30px w-md-40px h-md-40px" id="kt_header_menu_mobile_toggle">
+              <div style="    background-color: transparent !important;
+              border: 0px !important;" class="btn btn-icon btn-custom w-30px h-30px w-md-40px h-md-40px" id="kt_header_menu_mobile_toggle">
                 <!--begin::Svg Icon | path: icons/duotune/abstract/abs015.svg-->
                 <span class="svg-icon svg-icon-2x">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -116,7 +117,7 @@ License: For each use you must have a valid license purchased only from above li
             </div>
             <!--end::Header Logo-->
             <!--begin::Wrapper-->
-            <div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1">
+            <div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1" style="padding-top: 20px;">
               <!--begin::Navbar-->
               <div class="d-flex align-items-stretch" id="kt_header_nav">
                 <!--begin::Menu wrapper-->
@@ -131,19 +132,17 @@ License: For each use you must have a valid license purchased only from above li
                     id="#kt_header_menu" data-kt-menu="true">
                     <div class="menu-item menu-lg-down-accordion me-lg-1">
                       <span class="menu-link py-3">
-                        <span class="menu-title" style="font-size: large;">Perks</span>
+                        <a href="#perks"><span class="menu-title" style="font-size: large;" displayWith="formatThumbLabel">Perks</span></a>
                       </span>
                     </div>
-                    <div  data-kt-menu-placement="bottom-start"
-                      class="menu-item menu-lg-down-accordion me-lg-1">
+                    <div data-kt-menu-placement="bottom-start" class="menu-item menu-lg-down-accordion me-lg-1">
                       <span class="menu-link py-3">
-                        <span class="menu-title" style="font-size: large;">Openings</span>
+                        <a href="#opening"><span class="menu-title" style="font-size: large;">Openings</span></a>
                       </span>
                     </div>
-                    <div  data-kt-menu-placement="bottom-start"
-                      class="menu-item menu-lg-down-accordion me-lg-1">
+                    <div data-kt-menu-placement="bottom-start" class="menu-item menu-lg-down-accordion me-lg-1">
                       <span class="menu-link py-3">
-                        <span class="menu-title" style="font-size: large;">Contact</span>
+                        <a href="#"><span class="menu-title" style="font-size: large;">Contact</span></a>
                       </span>
                     </div>
 
@@ -180,7 +179,8 @@ License: For each use you must have a valid license purchased only from above li
                   <!--begin::Col-->
                   <div class="col-xxl-6">
                     <!--begin::Table Widget 1-->
-                    <div class="card card-xxl-stretch" style="border-radius: 20px;">
+                    <div class="card card-xxl-stretch card-border" style="border-radius: 20px;     border-radius: 20px;
+                    border: 2px solid rgba(1, 24, 92,.2);">
                       <!--begin::Header-->
                       <div class="card-header border-0 pt-5 pb-3">
                         <!--begin::Card title-->
@@ -206,8 +206,9 @@ License: For each use you must have a valid license purchased only from above li
                         <p style="font-size: 15px;">To be a leader in providing world class, customer focused, quality
                           driven IT services to
                           financial services companies and SMEs (small and medium enterprises).</p>
-                        <div class="d-grid gap-2 d-sm-flex justify-content-sm-end btn-about" style="margin: 20px 0px 12px 0px ">
-                          <button  type="button" route class="btn btn-outline-primary btn-lg px-4 me-sm-3 fw-bold">More
+                        <div class="d-grid gap-2 d-sm-flex justify-content-sm-end btn-about"
+                          style="margin: 20px 0px 12px 0px ">
+                          <button type="button" route class="btn btn-outline-primary btn-lg px-4 me-sm-3 fw-bold">More
                             info..</button>
                         </div>
                       </div>
@@ -219,7 +220,7 @@ License: For each use you must have a valid license purchased only from above li
                   <!--begin::Col-->
                   <div class="col-xxl-6">
                     <!--begin::Table Widget 1-->
-                    <div class="card card-xxl-stretch  mb-5 mb-xl-8" style="border-radius: 20px;">
+                    <div class="card card-xxl-stretch card-border  mb-5 mb-xl-8" style="border-radius: 20px;">
                       <!--begin::Header-->
                       <div class="card-header border-0 pt-5 pb-3">
                         <!--begin::Card title-->
@@ -296,7 +297,7 @@ License: For each use you must have a valid license purchased only from above li
                             <img src="https://static.ambitionbox.com/static/logo.svg" width="50px"
                               alt="glassdoor image">
                             <p class="text"
-                              style="color:#040a1e;font-weight: bold;font-size: 20px;padding: 5px;margin-top: 10px">
+                              style="color:#040a1e;font-weight: bold;font-size: 19px;padding: 5px;margin-top: 10px">
                               AmbitionBox
                             </p>
                           </div>
@@ -330,9 +331,9 @@ License: For each use you must have a valid license purchased only from above li
                   <!--begin::Col-->
                   <div class="col-xxl-6">
                     <!--begin::List Widget 4-->
-                    <div class="card card-xl-stretch" style="border-radius: 20px;">
+                    <div class="card card-xl-stretch card-border" style="border-radius: 20px;">
                       <!--begin::Header-->
-                      <div class="card-header align-items-center border-0 mt-5">
+                      <div class="card-header align-items-center border-0 mt-5" id="opening">
                         <h3 class="card-title align-items-start flex-column">
                           <span class="fw-bolder text-dark fs-2">Current Openings</span>
                         </h3>
@@ -344,15 +345,19 @@ License: For each use you must have a valid license purchased only from above li
                       <!--begin::Body-->
                       <div class="card-body pt-1" style="margin-bottom: 15px;">
 
-                        <ul style=" color: #01185c;font-size: 20px; margin-left: 20px;">
-                          <li style="padding: 5px;"><span style="color: black;"><a class="a-item-hover" href="#"
-                                style="text-decoration: none; color:black">Devops &#8594;</a></span></li>
-                          <li style="padding: 5px;"><span style="color: black;"><a class="a-item-hover" href="#"
-                                style="text-decoration: none; color:black">Business Developer &#8594;</a></span></li>
-                          <li style="padding: 5px;"><span style="color: black;"><a class="a-item-hover" href="#"
-                                style="text-decoration: none; color:black">Full Stack Developer &#8594;</a></span></li>
-                          <li style="padding: 5px;"><span style="color: black;"><a class="a-item-hover" href="#"
-                                style="text-decoration: none; color:black">.Net Developer &#8594;</a></span></li>
+                        <ul style=" color: #01185c;font-size: 19px; margin-left: 20px;">
+                          <li style="padding: 5px;"><span style="color: black;"><a class="a-item-hover"
+                                href="#kt_card_1_dev" style="text-decoration: none; color:black">Devops
+                                &#8594;</a></span></li>
+                          <li style="padding: 5px;"><span style="color: black;"><a class="a-item-hover"
+                                href="#kt_card_1_bd" style="text-decoration: none; color:black">Business Developer
+                                &#8594;</a></span></li>
+                          <li style="padding: 5px;"><span style="color: black;"><a class="a-item-hover"
+                                href="#kt_card_1_fsd" style="text-decoration: none; color:black">Full Stack Developer
+                                &#8594;</a></span></li>
+                          <li style="padding: 5px;"><span style="color: black;"><a class="a-item-hover"
+                                href="#kt_card_1_net" style="text-decoration: none; color:black">.Net Developer
+                                &#8594;</a></span></li>
 
                         </ul>
 
@@ -365,7 +370,7 @@ License: For each use you must have a valid license purchased only from above li
                   <!--begin::Col-->
                   <div class="col-xxl-6">
                     <!--begin::List Widget 5-->
-                    <div class="card card-xl-stretch mb-5 mb-xl-8" style="border-radius: 20px;">
+                    <div class="card card-xl-stretch card-border mb-5 mb-xl-8" style="border-radius: 20px;" id="perks">
                       <!--begin::Header-->
                       <div class="card-header border-0 pt-5">
                         <h3 class="card-title align-items-start flex-column">
@@ -382,7 +387,6 @@ License: For each use you must have a valid license purchased only from above li
                       <!--begin::Body-->
                       <div class="card-body pt-5">
 
-
                         <app-carousel></app-carousel>
                       </div>
                       <!--end::Body-->
@@ -398,14 +402,60 @@ License: For each use you must have a valid license purchased only from above li
 
 
 
-                <div class="card card-custom showhim" style="border-radius:20px" id="kt_card_1">
+                <div class="card card-custom showhim card-border " style="border-radius:20px" id="kt_card_1_dev">
                   <div class="card-header">
                     <h3 class="card-title align-items-start flex-column">
                       <span class="card-label fw-bolder text-dark">Devops</span>
                       <span class="text-muted mt-1 fw-bold fs-7">Preview monthly events</span>
                     </h3>
                     <div class="card-toolbar ">
-                      <a href="#" class="btn btn-primary">Apply</a>
+                      <!-- <a href="#" class="btn btn-primary">Apply</a> -->
+                      <button type="button" class="btn btn-light me-2" data-bs-toggle="modal"
+                        data-bs-target="#exampleModalDevops">Apply</button>
+                      <div class="modal fade" id="exampleModalDevops" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                          <div class="modal-content modal-content">
+                            <div class="modal-body overlay overlay-block">
+                              <div class="form-group">
+                                <form [formGroup]="employeeForm" class="contact-form" (submit)="sendEmail($event)">
+                                  <div class="form-floating mb-7">
+                                    <input formControlName="name" type="text" class="form-control" id="name"
+                                      placeholder="Enter Name" name="user_name" />
+                                    <label for="name">Name</label>
+                                  </div>
+                                  <div class="form-floating mb-7"><input formControlName="email" type="email"
+                                      class="form-control" id="email" placeholder="Enter Email"
+                                      name="user_email" /><label for="email">Email address</label>
+                                  </div>
+                                  <div class="form-floating mb-7"><input formControlName="phone" type="tel"
+                                      class="form-control" id="phone" placeholder="Enter Phone Number"
+                                      name="user_phone" /><label for="phone">Phone
+                                      Number</label></div>
+                                  <div class="form-floating mb-7">
+                                    <input formControlName="category" name="category" value="Devops" type="text"
+                                      class="form-control" id="category" name="category" readonly />
+                                    <label for="phone">Category
+                                    </label>
+                                  </div>
+                                  <div class="form-floating mb-7"><input formControlName="file" type="file"
+                                      class="form-control" id="file" name="my_file" /><label for="file">Attach
+                                      Resume</label>
+                                  </div>
+
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn  btn-light  fw-bold"
+                                      data-bs-dismiss="modal">Close</button>
+                                    <input type="submit" value="Submit" class="btn btn-light ">
+                                  </div>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
                     </div>
                   </div>
                   <div class="card-body showme">
@@ -430,28 +480,115 @@ License: For each use you must have a valid license purchased only from above li
                     <p>sdjjsjdjbkfkkjkhvgvjkj;hkjghcgchjklj;kjlhkgjhcjvbkljlhkgjhcgxhjl;hkgjhcgjhvbljhkgjhg</p>
                   </div>
                   <div class="card-toolbar d-grid gap-2 d-sm-flex justify-content-sm-center">
-                    <a href="#" class="showme1 buttonnew">Apply</a>
+                    <button type="button" style="    margin-left: 5px;
+                   " class="showme1 buttonnew btn btn-light me-2" data-bs-toggle="modal"
+                      data-bs-target="#exampleModalDevops">Apply</button>
+                    <div class="modal fade" id="exampleModalDevops" tabindex="-1" role="dialog"
+                      aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content modal-content">
+                          <div class="modal-body overlay overlay-block">
+                            <div class="form-group">
+                              <form [formGroup]="employeeForm" class="contact-form" (submit)="sendEmail($event)">
+                                <div class="form-floating mb-7">
+                                  <input formControlName="name" type="text" class="form-control" id="name"
+                                    placeholder="Enter Name" name="user_name" />
+                                  <label for="name">Name</label>
+                                </div>
+                                <div class="form-floating mb-7"><input formControlName="email" type="email"
+                                    class="form-control" id="email" placeholder="Enter Email" name="user_email" /><label
+                                    for="email">Email address</label>
+                                </div>
+                                <div class="form-floating mb-7"><input formControlName="phone" type="tel"
+                                    class="form-control" id="phone" placeholder="Enter Phone Number"
+                                    name="user_phone" /><label for="phone">Phone
+                                    Number</label></div>
+                                <div class="form-floating mb-7">
+                                  <input formControlName="category" name="category" value="Devops" type="text"
+                                    class="form-control" id="category" name="category" readonly />
+                                  <label for="phone">Category
+                                  </label>
+                                </div>
+                                <div class="form-floating mb-7"><input formControlName="file" type="file"
+                                    class="form-control" id="file" name="my_file" /><label for="file">Attach
+                                    Resume</label>
+                                </div>
+
+                                <div class="modal-footer">
+                                  <button type="button" class="btn  btn-light  fw-bold"
+                                    data-bs-dismiss="modal">Close</button>
+                                  <input type="submit" value="Submit" class="btn btn-light ">
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                <div class="card card-custom showhim" style="border-radius:20px; margin-top: 10px;" id="kt_card_1">
+                <div class="card card-custom showhim card-border" style="border-radius:20px; margin-top: 10px;" id="kt_card_1_bd">
                   <div class="card-header">
                     <h3 class="card-title align-items-start flex-column">
-                      <span class="card-label fw-bolder text-dark">Devops</span>
+                      <span class="card-label fw-bolder text-dark">Business Developer</span>
                       <span class="text-muted mt-1 fw-bold fs-7">Preview monthly events</span>
                     </h3>
                     <div class="card-toolbar">
-                      <a href="#" class="btn btn-primary">Apply</a>
+                      <button type="button" class="btn btn-light me-2" data-bs-toggle="modal"
+                        data-bs-target="#exampleModalbd">Apply</button>
+                      <div class="modal fade" id="exampleModalbd" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                          <div class="modal-content modal-content">
+                            <div class="modal-body overlay overlay-block">
+                              <div class="form-group">
+                                <form [formGroup]="employeeForm" class="contact-form" (submit)="sendEmail($event)">
+                                  <div class="form-floating mb-7">
+                                    <input formControlName="name" type="text" class="form-control" id="name"
+                                      placeholder="Enter Name" name="user_name" />
+                                    <label for="name">Name</label>
+                                  </div>
+                                  <div class="form-floating mb-7"><input formControlName="email" type="email"
+                                      class="form-control" id="email" placeholder="Enter Email"
+                                      name="user_email" /><label for="email">Email address</label>
+                                  </div>
+                                  <div class="form-floating mb-7"><input formControlName="phone" type="tel"
+                                      class="form-control" id="phone" placeholder="Enter Phone Number"
+                                      name="user_phone" /><label for="phone">Phone
+                                      Number</label></div>
+                                  <div class="form-floating mb-7">
+                                    <input formControlName="category" name="category" value="Business Developer"
+                                      type="text" class="form-control" id="category" name="category" readonly />
+                                    <label for="phone">Category
+                                    </label>
+                                  </div>
+                                  <div class="form-floating mb-7"><input formControlName="file" type="file"
+                                      class="form-control" id="file" name="my_file" /><label for="file">Attach
+                                      Resume</label>
+                                  </div>
+
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn  btn-light  fw-bold"
+                                      data-bs-dismiss="modal">Close</button>
+                                    <input type="submit" value="Submit" class="btn btn-light ">
+                                  </div>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div class="card-body showme">
-                    <p>Devops 5 years experiance</p>
+                    <p>Business Developer 5 years experiance</p>
                     <span>.</span>
                     <span>.</span>
                     <span>.</span>
                   </div>
                   <div class="card-body showme1">
-                    <p>Devops 5 years experiance</p>
+                    <p>Business Developer 5 years experiance</p>
                     <span>.</span>
                     <span>.</span>
                     <span>.</span>
@@ -466,28 +603,115 @@ License: For each use you must have a valid license purchased only from above li
                     <p>sdjjsjdjbkfkkjkhvgvjkj;hkjghcgchjklj;kjlhkgjhcjvbkljlhkgjhcgxhjl;hkgjhcgjhvbljhkgjhg</p>
                   </div>
                   <div class="card-toolbar d-grid gap-2 d-sm-flex justify-content-sm-center">
-                    <a href="#" class="showme1 buttonnew">Apply</a>
+                    <button type="button" style="    margin-left: 5px;
+                    " class="showme1 buttonnew btn btn-light me-2" data-bs-toggle="modal"
+                      data-bs-target="#exampleModalbd">Apply</button>
+                    <div class="modal fade" id="exampleModalbd" tabindex="-1" role="dialog"
+                      aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content modal-content">
+                          <div class="modal-body overlay overlay-block">
+                            <div class="form-group">
+                              <form [formGroup]="employeeForm" class="contact-form" (submit)="sendEmail($event)">
+                                <div class="form-floating mb-7">
+                                  <input formControlName="name" type="text" class="form-control" id="name"
+                                    placeholder="Enter Name" name="user_name" />
+                                  <label for="name">Name</label>
+                                </div>
+                                <div class="form-floating mb-7"><input formControlName="email" type="email"
+                                    class="form-control" id="email" placeholder="Enter Email" name="user_email" /><label
+                                    for="email">Email address</label>
+                                </div>
+                                <div class="form-floating mb-7"><input formControlName="phone" type="tel"
+                                    class="form-control" id="phone" placeholder="Enter Phone Number"
+                                    name="user_phone" /><label for="phone">Phone
+                                    Number</label></div>
+                                <div class="form-floating mb-7">
+                                  <input formControlName="category" name="category" value="Business Developer"
+                                    type="text" class="form-control" id="category" name="category" readonly />
+                                  <label for="phone">Category
+                                  </label>
+                                </div>
+                                <div class="form-floating mb-7"><input formControlName="file" type="file"
+                                    class="form-control" id="file" name="my_file" /><label for="file">Attach
+                                    Resume</label>
+                                </div>
+
+                                <div class="modal-footer">
+                                  <button type="button" class="btn  btn-light  fw-bold"
+                                    data-bs-dismiss="modal">Close</button>
+                                  <input type="submit" value="Submit" class="btn btn-light ">
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                <div class="card card-custom showhim" style="border-radius:20px; margin-top: 10px;" id="kt_card_1">
+                <div class="card card-custom showhim card-border" style="border-radius:20px; margin-top: 10px;" id="kt_card_1_fsd">
                   <div class="card-header">
                     <h3 class="card-title align-items-start flex-column">
-                      <span class="card-label fw-bolder text-dark">Devops</span>
+                      <span class="card-label fw-bolder text-dark">Full Stack Developer</span>
                       <span class="text-muted mt-1 fw-bold fs-7">Preview monthly events</span>
                     </h3>
                     <div class="card-toolbar">
-                      <a href="#" class="btn btn-primary">Apply</a>
+                      <button type="button" class="btn btn-light me-2" data-bs-toggle="modal"
+                        data-bs-target="#exampleModalfsd">Apply</button>
+                      <div class="modal fade" id="exampleModalfsd" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                          <div class="modal-content modal-content">
+                            <div class="modal-body overlay overlay-block">
+                              <div class="form-group">
+                                <form [formGroup]="employeeForm" class="contact-form" (submit)="sendEmail($event)">
+                                  <div class="form-floating mb-7">
+                                    <input formControlName="name" type="text" class="form-control" id="name"
+                                      placeholder="Enter Name" name="user_name" />
+                                    <label for="name">Name</label>
+                                  </div>
+                                  <div class="form-floating mb-7"><input formControlName="email" type="email"
+                                      class="form-control" id="email" placeholder="Enter Email"
+                                      name="user_email" /><label for="email">Email address</label>
+                                  </div>
+                                  <div class="form-floating mb-7"><input formControlName="phone" type="tel"
+                                      class="form-control" id="phone" placeholder="Enter Phone Number"
+                                      name="user_phone" /><label for="phone">Phone
+                                      Number</label></div>
+                                  <div class="form-floating mb-7">
+                                    <input formControlName="category" name="category" value="Full Stack Developer"
+                                      type="text" class="form-control" id="category" name="category" readonly />
+                                    <label for="phone">Category
+                                    </label>
+                                  </div>
+                                  <div class="form-floating mb-7"><input formControlName="file" type="file"
+                                      class="form-control" id="file" name="my_file" /><label for="file">Attach
+                                      Resume</label>
+                                  </div>
+
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn  btn-light  fw-bold"
+                                      data-bs-dismiss="modal">Close</button>
+                                    <input type="submit" value="Submit" class="btn btn-light ">
+                                  </div>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div class="card-body showme">
-                    <p>Devops 5 years experiance</p>
+                    <p>Full Stack Developer 5 years experiance</p>
                     <span>.</span>
                     <span>.</span>
                     <span>.</span>
                   </div>
                   <div class="card-body showme1">
-                    <p>Devops 5 years experiance</p>
+                    <p>Full Stack Developer 5 years experiance</p>
                     <span>.</span>
                     <span>.</span>
                     <span>.</span>
@@ -502,28 +726,115 @@ License: For each use you must have a valid license purchased only from above li
                     <p>sdjjsjdjbkfkkjkhvgvjkj;hkjghcgchjklj;kjlhkgjhcjvbkljlhkgjhcgxhjl;hkgjhcgjhvbljhkgjhg</p>
                   </div>
                   <div class="card-toolbar d-grid gap-2 d-sm-flex justify-content-sm-center">
-                    <a href="#" class="showme1 buttonnew">Apply</a>
+                    <button type="button" style="    margin-left: 5px;
+                    " class="showme1 buttonnew btn btn-light me-2" data-bs-toggle="modal"
+                      data-bs-target="#exampleModalfsd">Apply</button>
+                    <div class="modal fade" id="exampleModalfsd" tabindex="-1" role="dialog"
+                      aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content modal-content">
+                          <div class="modal-body overlay overlay-block">
+                            <div class="form-group">
+                              <form [formGroup]="employeeForm" class="contact-form" (submit)="sendEmail($event)">
+                                <div class="form-floating mb-7">
+                                  <input formControlName="name" type="text" class="form-control" id="name"
+                                    placeholder="Enter Name" name="user_name" />
+                                  <label for="name">Name</label>
+                                </div>
+                                <div class="form-floating mb-7"><input formControlName="email" type="email"
+                                    class="form-control" id="email" placeholder="Enter Email" name="user_email" /><label
+                                    for="email">Email address</label>
+                                </div>
+                                <div class="form-floating mb-7"><input formControlName="phone" type="tel"
+                                    class="form-control" id="phone" placeholder="Enter Phone Number"
+                                    name="user_phone" /><label for="phone">Phone
+                                    Number</label></div>
+                                <div class="form-floating mb-7">
+                                  <input formControlName="category" name="category" value="Full Stack Developer"
+                                    type="text" class="form-control" id="category" name="category" readonly />
+                                  <label for="phone">Category
+                                  </label>
+                                </div>
+                                <div class="form-floating mb-7"><input formControlName="file" type="file"
+                                    class="form-control" id="file" name="my_file" /><label for="file">Attach
+                                    Resume</label>
+                                </div>
+
+                                <div class="modal-footer">
+                                  <button type="button" class="btn  btn-light  fw-bold"
+                                    data-bs-dismiss="modal">Close</button>
+                                  <input type="submit" value="Submit" class="btn btn-light ">
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                <div class="card card-custom showhim" style="border-radius:20px; margin-top: 10px;" id="kt_card_1">
+                <div class="card card-custom showhim card-border" style="border-radius:20px; margin-top: 10px;" id="kt_card_1_net">
                   <div class="card-header">
                     <h3 class="card-title align-items-start flex-column">
-                      <span class="card-label fw-bolder text-dark">Devops</span>
+                      <span class="card-label fw-bolder text-dark">.Net Developer</span>
                       <span class="text-muted mt-1 fw-bold fs-7">Preview monthly events</span>
                     </h3>
                     <div class="card-toolbar">
-                      <a href="#" class="btn btn-primary">Apply</a>
+                      <button type="button" class="btn btn-light me-2" data-bs-toggle="modal"
+                        data-bs-target="#exampleModalnet">Apply</button>
+                      <div class="modal fade" id="exampleModalnet" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                          <div class="modal-content modal-content">
+                            <div class="modal-body overlay overlay-block">
+                              <div class="form-group">
+                                <form [formGroup]="employeeForm" class="contact-form" (submit)="sendEmail($event)">
+                                  <div class="form-floating mb-7">
+                                    <input formControlName="name" type="text" class="form-control" id="name"
+                                      placeholder="Enter Name" name="user_name" />
+                                    <label for="name">Name</label>
+                                  </div>
+                                  <div class="form-floating mb-7"><input formControlName="email" type="email"
+                                      class="form-control" id="email" placeholder="Enter Email"
+                                      name="user_email" /><label for="email">Email address</label>
+                                  </div>
+                                  <div class="form-floating mb-7"><input formControlName="phone" type="tel"
+                                      class="form-control" id="phone" placeholder="Enter Phone Number"
+                                      name="user_phone" /><label for="phone">Phone
+                                      Number</label></div>
+                                  <div class="form-floating mb-7">
+                                    <input formControlName="category" name="category" value=".Net Developer" type="text"
+                                      class="form-control" id="category" name="category" readonly />
+                                    <label for="phone">Category
+                                    </label>
+                                  </div>
+                                  <div class="form-floating mb-7"><input formControlName="file" type="file"
+                                      class="form-control" id="file" name="my_file" /><label for="file">Attach
+                                      Resume</label>
+                                  </div>
+
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn  btn-light  fw-bold"
+                                      data-bs-dismiss="modal">Close</button>
+                                    <input type="submit" value="Submit" class="btn btn-light ">
+                                  </div>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div class="card-body showme">
-                    <p>Devops 5 years experiance</p>
+                    <p>.Net Developer 5 years experiance</p>
                     <span>.</span>
                     <span>.</span>
                     <span>.</span>
                   </div>
                   <div class="card-body showme1">
-                    <p>Devops 5 years experiance</p>
+                    <p>.Net Developer 5 years experiance</p>
                     <span>.</span>
                     <span>.</span>
                     <span>.</span>
@@ -538,9 +849,90 @@ License: For each use you must have a valid license purchased only from above li
                     <p>sdjjsjdjbkfkkjkhvgvjkj;hkjghcgchjklj;kjlhkgjhcjvbkljlhkgjhcgxhjl;hkgjhcgjhvbljhkgjhg</p>
                   </div>
                   <div class="card-toolbar d-grid gap-2 d-sm-flex justify-content-sm-center">
-                    <a href="#" class="showme1 buttonnew">Apply</a>
+                    <button type="button" style="    margin-left: 5px;
+                    " class="showme1 buttonnew btn btn-light me-2" data-bs-toggle="modal"
+                      data-bs-target="#exampleModalnet">Apply</button>
+                    <div class="modal fade" id="exampleModalnet" tabindex="-1" role="dialog"
+                      aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content modal-content">
+                          <div class="modal-body overlay overlay-block">
+                            <div class="form-group">
+                              <form [formGroup]="employeeForm" class="contact-form" (submit)="sendEmail($event)">
+                                <div class="form-floating mb-7">
+                                  <input formControlName="name" type="text" class="form-control" id="name"
+                                    placeholder="Enter Name" name="user_name" />
+                                  <label for="name">Name</label>
+                                </div>
+                                <div class="form-floating mb-7"><input formControlName="email" type="email"
+                                    class="form-control" id="email" placeholder="Enter Email" name="user_email" /><label
+                                    for="email">Email address</label>
+                                </div>
+                                <div class="form-floating mb-7"><input formControlName="phone" type="tel"
+                                    class="form-control" id="phone" placeholder="Enter Phone Number"
+                                    name="user_phone" /><label for="phone">Phone
+                                    Number</label></div>
+                                <div class="form-floating mb-7">
+                                  <input formControlName="category" name="category" value=".Net Developer" type="text"
+                                    class="form-control" id="category" name="category" readonly />
+                                  <label for="phone">Category
+                                  </label>
+                                </div>
+                                <div class="form-floating mb-7"><input formControlName="file" type="file"
+                                    class="form-control" id="file" name="my_file" /><label for="file">Attach
+                                    Resume</label>
+                                </div>
+
+                                <div class="modal-footer">
+                                  <button type="button" class="btn  btn-light  fw-bold"
+                                    data-bs-dismiss="modal">Close</button>
+                                  <input type="submit" value="Submit" class="btn btn-light ">
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content modal-content">
+                    <div class="modal-body overlay overlay-block">
+                      <div class="form-group">
+                        <form [formGroup]="employeeForm" class="contact-form" (submit)="sendEmail($event)">
+                          <div class="form-floating mb-7">
+                            <input formControlName="name" type="text" class="form-control" id="name"
+                              placeholder="Enter Name" name="user_name" />
+                            <label for="name">Name</label>
+                          </div>
+                          <div class="form-floating mb-7"><input formControlName="email" type="email"
+                              class="form-control" id="email" placeholder="Enter Email" name="user_email" /><label
+                              for="email">Email address</label>
+                          </div>
+                          <div class="form-floating mb-7"><input formControlName="phone" type="tel"
+                              class="form-control" id="phone" placeholder="Enter Phone Number"
+                              name="user_phone" /><label for="phone">Phone
+                              Number</label></div>
+
+                          <div class="form-floating mb-7"><input formControlName="file" type="file"
+                              class="form-control" id="file" name="my_file" /><label for="file">Attach
+                              Resume</label>
+                          </div>
+
+                          <div class="modal-footer">
+                            <button type="button" class="btn  btn-light  fw-bold"
+                              data-bs-dismiss="modal">Close</button>
+                            <input type="submit" value="Submit" class="btn btn-light ">
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
 
 
@@ -569,14 +961,20 @@ License: For each use you must have a valid license purchased only from above li
 
         </div>
         <!--end::Container-->
-        <div class="text-secondary px-4 py-5 text-center"
-          style="border-radius: 4px;margin-top: 15px;background-color:#01185c;">
+        <div class="text-secondary px-4 py-5 text-center card-border" id="contact"
+          style="border-radius: 4px;margin-top: 15px;background-color:white;">
           <div class="py-5">
-            <h1 class="display-5 fw-bold text-white">Couldn't find suitable opening?</h1>
+            <h1 class="display-5 fw-bold" style="color: #01185c;">Couldn't find suitable opening?</h1>
             <div class="col-lg-6 mx-auto">
 
               <div class="d-grid gap-2 d-sm-flex justify-content-sm-center" style="margin-top: 15px;">
-                <button type="button" class="btn btn-outline-primary btn-lg px-4 me-sm-3 fw-bold">Apply Here!</button>
+
+
+                <button type="button" class="btn btn-light me-2" data-bs-toggle="modal"
+                  data-bs-target="#exampleModal">Apply Here!</button>
+
+
+
               </div>
             </div>
           </div>
@@ -1036,7 +1434,7 @@ License: For each use you must have a valid license purchased only from above li
                       <!--end::Image-->
                       <!--begin::Link-->
                       <div class="overlay-layer bg-dark bg-opacity-10 rounded">
-                        <a href="#" class="btn btn-sm btn-primary btn-shadow">Explore</a>
+                        <a href="#" class="btn btn-sm btn-light btn-shadow">Explore</a>
                       </div>
                       <!--end::Link-->
                     </div>
@@ -1050,7 +1448,7 @@ License: For each use you must have a valid license purchased only from above li
                       <!--end::Image-->
                       <!--begin::Link-->
                       <div class="overlay-layer bg-dark bg-opacity-10 rounded">
-                        <a href="#" class="btn btn-sm btn-primary btn-shadow">Explore</a>
+                        <a href="#" class="btn btn-sm btn-light btn-shadow">Explore</a>
                       </div>
                       <!--end::Link-->
                     </div>
@@ -1064,7 +1462,7 @@ License: For each use you must have a valid license purchased only from above li
                       <!--end::Image-->
                       <!--begin::Link-->
                       <div class="overlay-layer bg-dark bg-opacity-10 rounded">
-                        <a href="#" class="btn btn-sm btn-primary btn-shadow">Explore</a>
+                        <a href="#" class="btn btn-sm btn-light btn-shadow">Explore</a>
                       </div>
                       <!--end::Link-->
                     </div>
@@ -1203,7 +1601,7 @@ License: For each use you must have a valid license purchased only from above li
                       </div>
                       <!--end::Content-->
                       <!--begin::Action-->
-                      <a href="#" class="btn btn-primary px-6 align-self-center text-nowrap">Proceed</a>
+                      <a href="#" class="btn btn-light px-6 align-self-center text-nowrap">Proceed</a>
                       <!--end::Action-->
                     </div>
                     <!--end::Wrapper-->
@@ -1333,7 +1731,7 @@ License: For each use you must have a valid license purchased only from above li
           </div>
           <!--end::Heading-->
           <!--begin::Google Contacts Invite-->
-          <div class="btn btn-light-primary fw-bolder w-100 mb-8">
+          <div class="btn  btn-light  fw-bolder w-100 mb-8">
             <img alt="Logo" src="assets/media/svg/brand-logos/google-icon.svg" class="h-20px me-3" />Invite Gmail
             Contacts
           </div>
@@ -2556,7 +2954,7 @@ License: For each use you must have a valid license purchased only from above li
                 <div class="d-flex flex-stack pt-10">
                   <!--begin::Wrapper-->
                   <div class="me-2">
-                    <button type="button" class="btn btn-lg btn-light-primary me-3" data-kt-stepper-action="previous">
+                    <button type="button" class="btn btn-lg  btn-light  me-3" data-kt-stepper-action="previous">
                       <!--begin::Svg Icon | path: icons/duotune/arrows/arr063.svg-->
                       <span class="svg-icon svg-icon-3 me-1">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -2836,16 +3234,7 @@ License: For each use you must have a valid license purchased only from above li
   <script src="/src/assets/custom/widgets.js"></script>
   <!--end::Page Custom Javascript-->
   <!--end::Javascript-->
-  <script>
-    $("#kt_card_1").hover(function () {
-      alert();
-      (this).find(".card-body").show();
-    });
-    $("#kt_card_1").mouseover(function () {
-      (this).find(".card-body").hide();
-    });
 
-  </script>
 </body>
 <!--end::Body-->
 
