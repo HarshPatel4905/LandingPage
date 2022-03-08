@@ -395,12 +395,12 @@ License: For each use you must have a valid license purchased only from above li
                 <div class="col-md-12" *ngFor="let datas of data;let i = index;">
                   <div class="card card-custom showhim card-border " style="border-radius:7px;margin-bottom: 12px;"
                     id="kt_card_1_dev-{{i}}">
-                    <div class="card-header">
-                      <h3 class="card-title align-items-start flex-column">
+                    <div class="card-header row">
+                      <h3 class="card-title col-md-7">
                         <span class="card-label fw-bolder text-dark">{{datas.title}}</span>
                         <span class="text-muted mt-1 fw-bold fs-7">{{datas.RequiedExp}} years Experience</span>
                       </h3>
-                      <div class="card-toolbar ">
+                      <div class="card-toolbar col-md-4 d-flex justify-content-end">
                         <!-- <a href="#" class="btn btn-primary">Apply</a> -->
                         <button type="button" class="btn btn-light me-2" data-bs-toggle="modal"
                           data-bs-target="#exampleModel" id="{{datas.title}}"  (click)="setCategory(datas.title)">Apply</button>
