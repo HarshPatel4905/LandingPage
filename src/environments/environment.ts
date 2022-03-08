@@ -1,7 +1,17 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
+export class cards{
+  title!:string;
+  JDTITLE!:string;
+  POINTS!:Array<String>;
+  RequiedExp!:number;
+  skills!:Array<String>;
+  PreferedQualifications!:Array<String>;
+  Location!:string;
+  Qualification!:string;
 
+}
 export const environment = {
   production: false
 };

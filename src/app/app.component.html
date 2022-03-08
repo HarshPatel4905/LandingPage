@@ -94,7 +94,8 @@ License: For each use you must have a valid license purchased only from above li
             <!--begin::Heaeder menu toggle-->
             <div class="d-flex align-items-center d-lg-none ms-n2 me-3" title="Show aside menu">
               <div style="    background-color: transparent !important;
-              border: 0px !important;" class="btn btn-icon btn-custom w-30px h-30px w-md-40px h-md-40px" id="kt_header_menu_mobile_toggle">
+              border: 0px !important;" class="btn btn-icon btn-custom w-30px h-30px w-md-40px h-md-40px"
+                id="kt_header_menu_mobile_toggle">
                 <!--begin::Svg Icon | path: icons/duotune/abstract/abs015.svg-->
                 <span class="svg-icon svg-icon-2x">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -132,7 +133,8 @@ License: For each use you must have a valid license purchased only from above li
                     id="#kt_header_menu" data-kt-menu="true">
                     <div class="menu-item menu-lg-down-accordion me-lg-1">
                       <span class="menu-link py-3">
-                        <a href="#perks"><span class="menu-title" style="font-size: large;" displayWith="formatThumbLabel">Perks</span></a>
+                        <a href="#perks"><span class="menu-title" style="font-size: large;"
+                            displayWith="formatThumbLabel">Perks</span></a>
                       </span>
                     </div>
                     <div data-kt-menu-placement="bottom-start" class="menu-item menu-lg-down-accordion me-lg-1">
@@ -343,22 +345,12 @@ License: For each use you must have a valid license purchased only from above li
                       </div>
                       <!--end::Header-->
                       <!--begin::Body-->
-                      <div class="card-body pt-1" style="margin-bottom: 15px;">
+                      <div class="card-body pt-1" style="margin-bottom: 15px;" >
 
                         <ul style=" color: #01185c;font-size: 19px; margin-left: 20px;">
-                          <li style="padding: 5px;"><span style="color: black;"><a class="a-item-hover"
-                                href="#kt_card_1_dev" style="text-decoration: none; color:black">Devops
+                          <li *ngFor="let datas of data ;let i = index;" style="padding: 2px; cursor: pointer;"><span style="color: black;"><a class="a-item-hover"
+                                href="#kt_card_1_dev-{{i}}" style="text-decoration: none; color:black;cursor: pointer;">{{datas.title}}
                                 &#8594;</a></span></li>
-                          <li style="padding: 5px;"><span style="color: black;"><a class="a-item-hover"
-                                href="#kt_card_1_bd" style="text-decoration: none; color:black">Business Developer
-                                &#8594;</a></span></li>
-                          <li style="padding: 5px;"><span style="color: black;"><a class="a-item-hover"
-                                href="#kt_card_1_fsd" style="text-decoration: none; color:black">Full Stack Developer
-                                &#8594;</a></span></li>
-                          <li style="padding: 5px;"><span style="color: black;"><a class="a-item-hover"
-                                href="#kt_card_1_net" style="text-decoration: none; color:black">.Net Developer
-                                &#8594;</a></span></li>
-
                         </ul>
 
                       </div>
@@ -400,540 +392,188 @@ License: For each use you must have a valid license purchased only from above li
 
 
 
+                <div class="col-md-12" *ngFor="let datas of data;let i = index;">
+                  <div class="card card-custom showhim card-border " style="border-radius:7px;margin-bottom: 12px;"
+                    id="kt_card_1_dev-{{i}}">
+                    <div class="card-header">
+                      <h3 class="card-title align-items-start flex-column">
+                        <span class="card-label fw-bolder text-dark">{{datas.title}}</span>
+                        <span class="text-muted mt-1 fw-bold fs-7">{{datas.RequiedExp}} years Experience</span>
+                      </h3>
+                      <div class="card-toolbar ">
+                        <!-- <a href="#" class="btn btn-primary">Apply</a> -->
+                        <button type="button" class="btn btn-light me-2" data-bs-toggle="modal"
+                          data-bs-target="#exampleModel" id="{{datas.title}}"  (click)="setCategory(datas.title)">Apply</button>
 
 
-                <div class="card card-custom showhim card-border " style="border-radius:20px" id="kt_card_1_dev">
-                  <div class="card-header">
-                    <h3 class="card-title align-items-start flex-column">
-                      <span class="card-label fw-bolder text-dark">Devops</span>
-                      <span class="text-muted mt-1 fw-bold fs-7">Preview monthly events</span>
-                    </h3>
-                    <div class="card-toolbar ">
-                      <!-- <a href="#" class="btn btn-primary">Apply</a> -->
-                      <button type="button" class="btn btn-light me-2" data-bs-toggle="modal"
-                        data-bs-target="#exampleModalDevops">Apply</button>
-                      <div class="modal fade" id="exampleModalDevops" tabindex="-1" role="dialog"
-                        aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                          <div class="modal-content modal-content">
-                            <div class="modal-body overlay overlay-block">
-                              <div class="form-group">
-                                <form [formGroup]="employeeForm" class="contact-form" (submit)="sendEmail($event)">
-                                  <div class="form-floating mb-7">
-                                    <input formControlName="name" type="text" class="form-control" id="name"
-                                      placeholder="Enter Name" name="user_name" />
-                                    <label for="name">Name</label>
-                                  </div>
-                                  <div class="form-floating mb-7"><input formControlName="email" type="email"
-                                      class="form-control" id="email" placeholder="Enter Email"
-                                      name="user_email" /><label for="email">Email address</label>
-                                  </div>
-                                  <div class="form-floating mb-7"><input formControlName="phone" type="tel"
-                                      class="form-control" id="phone" placeholder="Enter Phone Number"
-                                      name="user_phone" /><label for="phone">Phone
-                                      Number</label></div>
-                                  <div class="form-floating mb-7">
-                                    <input formControlName="category" name="category" value="Devops" type="text"
-                                      class="form-control" id="category" name="category" readonly />
-                                    <label for="phone">Category
-                                    </label>
-                                  </div>
-                                  <div class="form-floating mb-7"><input formControlName="file" type="file"
-                                      class="form-control" id="file" name="my_file" /><label for="file">Attach
-                                      Resume</label>
-                                  </div>
 
-                                  <div class="modal-footer">
-                                    <button type="button" class="btn  btn-light  fw-bold"
-                                      data-bs-dismiss="modal">Close</button>
-                                    <input type="submit" value="Submit" class="btn btn-light ">
-                                  </div>
-                                </form>
+                      </div>
+                    </div>
+                    <div class="card-body showme">
+                      <p>{{datas.JDTITLE}}</p>
+                    </div>
+                    <div class="card-body showme1">
+                      <h4>Job Description</h4>
+                      <hr class="hr-class-Desc">
+                      <p>{{datas.JDTITLE}}</p>
+                      <div *ngIf="datas.POINTS.length">
+                        <ul *ngFor="let point of datas.POINTS">
+                          <li>{{point}}</li>
+                        </ul>
+                      </div>
+
+
+                      <div *ngIf="datas.Responsibility.length">
+                        <h4>Responsibility</h4>
+                        <hr class="hr-class-loc">
+                        <ul *ngFor="let resp of datas.Responsibility">
+                          <li>{{resp}}</li>
+                        </ul>
+                      </div>
+                      <div *ngIf="datas.basicRequirement.length">
+                        <h4>Basic Requirement</h4>
+                        <hr class="hr-class-skills">
+                        <ul *ngFor="let basic of datas.basicRequirement">
+                          <li>{{basic}}</li>
+                        </ul>
+                      </div>
+                      <div *ngIf="datas.goodTO.length">
+                        <h4>Good to have</h4>
+                        <hr class="hr-class-loc">
+                        <ul *ngFor="let good of datas.goodTO">
+                          <li>{{good}}</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h4>Skillset Required</h4>
+                        <hr class="hr-class-skills">
+                        <ul *ngFor="let skill of datas.skills">
+                          <li>{{skill}}</li>
+                        </ul>
+                      </div>
+                      <div *ngIf="datas.PreferedQualifications.length">
+                        <h4>Prefered Qualification</h4>
+                        <hr class="hr-class-prequals">
+                        <ul *ngFor="let prefered of datas.PreferedQualifications">
+                          <li>{{prefered}}</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h4>Job Location</h4>
+                        <hr class="hr-class-loc">
+                        <p>{{datas.Location}}</p>
+                      </div>
+                      <div>
+                        <h4>Qualification</h4>
+                        <hr class="hr-class-quals">
+                        <p>{{datas.Qualification}}</p>
+                      </div>
+
+
+                    </div>
+                    <div class="card-toolbar d-grid gap-2 d-sm-flex justify-content-sm-center">
+                      <button type="button" style="    margin-left: 5px;" class="showme1 buttonnew btn btn-light me-2"
+                        data-bs-toggle="modal" data-bs-target="#exampleModel">Apply</button>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+                  <div class="modal fade" id="exampleModelwithoutCat" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content modal-content">
+                      <div class="modal-body overlay overlay-block">
+                        <div class="form-group">
+                          <form [formGroup]="employeeForm" class="contact-form" (submit)="sendEmail($event)">
+                            <div class="form-floating mb-7">
+                              <input required formControlName="name" type="text" class="form-control" id="name"
+                                placeholder="Enter Name" name="user_name" />
+                              <label for="name">Name<span class="error">*</span></label>
+                              <span *ngIf="checkUserError('name', 'required') && this.employeeForm.controls['name']?.touched" class="error">This Field is required</span>
+
+                            </div>
+                            <div class="form-floating mb-7"><input required formControlName="email" type="email"
+                                class="form-control" id="email" placeholder="Enter Email" name="user_email" /><label
+                                for="email">Email address<span class="error">*</span></label>
+                                <span *ngIf="checkUserError('email', 'required') && this.employeeForm.controls['email']?.touched" class="error">This Field is required</span>
+                                <span *ngIf="checkUserError('email', 'email') && this.employeeForm.controls['email']?.touched" class="error">Please enter valid email</span>
+
+                            </div>
+                            <div class="form-floating mb-7"><input required formControlName="phone" (keyup)="restrictNumber($event)" type="number"
+                                class="form-control" id="phone" placeholder="Enter Phone Number"
+                                name="user_phone" /><label for="phone">Phone
+                                Number<span class="error">*</span></label>
+                                <span *ngIf="checkUserError('phone', 'required') && this.employeeForm.controls['phone']?.touched" class="error">This Field is required</span>
+                                <span *ngIf="checkUserError('phone', 'pattern') && this.employeeForm.controls['phone']?.touched" class="error">Please enter valid phone number</span>
+
                               </div>
+
+                            <div class="form-floating mb-7"><input required formControlName="file" type="file"
+                                class="form-control" id="file" name="my_file" /><label for="file">Attach
+                                Resume</label>
                             </div>
-                          </div>
-                        </div>
-                      </div>
 
-
-                    </div>
-                  </div>
-                  <div class="card-body showme">
-                    <p>Devops 5 years experiance</p>
-                    <span>.</span>
-                    <span>.</span>
-                    <span>.</span>
-                  </div>
-                  <div class="card-body showme1">
-                    <p>Devops 5 years experiance</p>
-                    <span>.</span>
-                    <span>.</span>
-                    <span>.</span>
-                    <p>sdjjsjdjbkfkkjkhvgvjkj;hkjghcgchjklj;kjlhkgjhcjvbkljlhkgjhcgxhjl;hkgjhcgjhvbljhkgjhg</p>
-                    <p>sdjjsjdjbkfkkjkhvgvjkj;hkjghcgchjklj;kjlhkgjhcjvbkljlhkgjhcgxhjl;hkgjhcgjhvbljhkgjhg</p>
-                    <p>sdjjsjdjbkfkkjkhvgvjkj;hkjghcgchjklj;kjlhkgjhcjvbkljlhkgjhcgxhjl;hkgjhcgjhvbljhkgjhg</p>
-                    <p>sdjjsjdjbkfkkjkhvgvjkj;hkjghcgchjklj;kjlhkgjhcjvbkljlhkgjhcgxhjl;hkgjhcgjhvbljhkgjhg</p>
-                    <p>sdjjsjdjbkfkkjkhvgvjkj;hkjghcgchjklj;kjlhkgjhcjvbkljlhkgjhcgxhjl;hkgjhcgjhvbljhkgjhg</p>
-                    <p>sdjjsjdjbkfkkjkhvgvjkj;hkjghcgchjklj;kjlhkgjhcjvbkljlhkgjhcgxhjl;hkgjhcgjhvbljhkgjhg</p>
-                    <p>sdjjsjdjbkfkkjkhvgvjkj;hkjghcgchjklj;kjlhkgjhcjvbkljlhkgjhcgxhjl;hkgjhcgjhvbljhkgjhg</p>
-                    <p>sdjjsjdjbkfkkjkhvgvjkj;hkjghcgchjklj;kjlhkgjhcjvbkljlhkgjhcgxhjl;hkgjhcgjhvbljhkgjhg</p>
-                    <p>sdjjsjdjbkfkkjkhvgvjkj;hkjghcgchjklj;kjlhkgjhcjvbkljlhkgjhcgxhjl;hkgjhcgjhvbljhkgjhg</p>
-                  </div>
-                  <div class="card-toolbar d-grid gap-2 d-sm-flex justify-content-sm-center">
-                    <button type="button" style="    margin-left: 5px;
-                   " class="showme1 buttonnew btn btn-light me-2" data-bs-toggle="modal"
-                      data-bs-target="#exampleModalDevops">Apply</button>
-                    <div class="modal fade" id="exampleModalDevops" tabindex="-1" role="dialog"
-                      aria-labelledby="exampleModalLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content modal-content">
-                          <div class="modal-body overlay overlay-block">
-                            <div class="form-group">
-                              <form [formGroup]="employeeForm" class="contact-form" (submit)="sendEmail($event)">
-                                <div class="form-floating mb-7">
-                                  <input formControlName="name" type="text" class="form-control" id="name"
-                                    placeholder="Enter Name" name="user_name" />
-                                  <label for="name">Name</label>
-                                </div>
-                                <div class="form-floating mb-7"><input formControlName="email" type="email"
-                                    class="form-control" id="email" placeholder="Enter Email" name="user_email" /><label
-                                    for="email">Email address</label>
-                                </div>
-                                <div class="form-floating mb-7"><input formControlName="phone" type="tel"
-                                    class="form-control" id="phone" placeholder="Enter Phone Number"
-                                    name="user_phone" /><label for="phone">Phone
-                                    Number</label></div>
-                                <div class="form-floating mb-7">
-                                  <input formControlName="category" name="category" value="Devops" type="text"
-                                    class="form-control" id="category" name="category" readonly />
-                                  <label for="phone">Category
-                                  </label>
-                                </div>
-                                <div class="form-floating mb-7"><input formControlName="file" type="file"
-                                    class="form-control" id="file" name="my_file" /><label for="file">Attach
-                                    Resume</label>
-                                </div>
-
-                                <div class="modal-footer">
-                                  <button type="button" class="btn  btn-light  fw-bold"
-                                    data-bs-dismiss="modal">Close</button>
-                                  <input type="submit" value="Submit" class="btn btn-light ">
-                                </div>
-                              </form>
+                            <div class="modal-footer">
+                              <button type="button" class="btn  btn-light  fw-bold"
+                                data-bs-dismiss="modal">Close</button>
+                              <input type="submit" data-bs-dismiss="modal" [disabled]="!this.employeeForm.valid" value="Submit"  class="btn btn-light " >
                             </div>
-                          </div>
+                          </form>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div class="card card-custom showhim card-border" style="border-radius:20px; margin-top: 10px;" id="kt_card_1_bd">
-                  <div class="card-header">
-                    <h3 class="card-title align-items-start flex-column">
-                      <span class="card-label fw-bolder text-dark">Business Developer</span>
-                      <span class="text-muted mt-1 fw-bold fs-7">Preview monthly events</span>
-                    </h3>
-                    <div class="card-toolbar">
-                      <button type="button" class="btn btn-light me-2" data-bs-toggle="modal"
-                        data-bs-target="#exampleModalbd">Apply</button>
-                      <div class="modal fade" id="exampleModalbd" tabindex="-1" role="dialog"
-                        aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                          <div class="modal-content modal-content">
-                            <div class="modal-body overlay overlay-block">
-                              <div class="form-group">
-                                <form [formGroup]="employeeForm" class="contact-form" (submit)="sendEmail($event)">
-                                  <div class="form-floating mb-7">
-                                    <input formControlName="name" type="text" class="form-control" id="name"
-                                      placeholder="Enter Name" name="user_name" />
-                                    <label for="name">Name</label>
-                                  </div>
-                                  <div class="form-floating mb-7"><input formControlName="email" type="email"
-                                      class="form-control" id="email" placeholder="Enter Email"
-                                      name="user_email" /><label for="email">Email address</label>
-                                  </div>
-                                  <div class="form-floating mb-7"><input formControlName="phone" type="tel"
-                                      class="form-control" id="phone" placeholder="Enter Phone Number"
-                                      name="user_phone" /><label for="phone">Phone
-                                      Number</label></div>
-                                  <div class="form-floating mb-7">
-                                    <input formControlName="category" name="category" value="Business Developer"
-                                      type="text" class="form-control" id="category" name="category" readonly />
-                                    <label for="phone">Category
-                                    </label>
-                                  </div>
-                                  <div class="form-floating mb-7"><input formControlName="file" type="file"
-                                      class="form-control" id="file" name="my_file" /><label for="file">Attach
-                                      Resume</label>
-                                  </div>
-
-                                  <div class="modal-footer">
-                                    <button type="button" class="btn  btn-light  fw-bold"
-                                      data-bs-dismiss="modal">Close</button>
-                                    <input type="submit" value="Submit" class="btn btn-light ">
-                                  </div>
-                                </form>
+                <div class="modal fade" id="exampleModel" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content modal-content">
+                        <div class="modal-body overlay overlay-block">
+                          <div class="form-group">
+                            <form [formGroup]="employeeForm" class="contact-form" (submit)="sendEmail($event)">
+                              <div class="form-floating mb-7">
+                                <input formControlName="name" type="text" class="form-control" id="name"
+                                  placeholder="Enter Name" name="user_name" />
+                                <label for="name">Name<span class="error">*</span></label>
+                                <span *ngIf="checkUserError('name', 'required') && this.employeeForm.controls['name']?.touched" class="error">This Field is required</span>
                               </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-body showme">
-                    <p>Business Developer 5 years experiance</p>
-                    <span>.</span>
-                    <span>.</span>
-                    <span>.</span>
-                  </div>
-                  <div class="card-body showme1">
-                    <p>Business Developer 5 years experiance</p>
-                    <span>.</span>
-                    <span>.</span>
-                    <span>.</span>
-                    <p>sdjjsjdjbkfkkjkhvgvjkj;hkjghcgchjklj;kjlhkgjhcjvbkljlhkgjhcgxhjl;hkgjhcgjhvbljhkgjhg</p>
-                    <p>sdjjsjdjbkfkkjkhvgvjkj;hkjghcgchjklj;kjlhkgjhcjvbkljlhkgjhcgxhjl;hkgjhcgjhvbljhkgjhg</p>
-                    <p>sdjjsjdjbkfkkjkhvgvjkj;hkjghcgchjklj;kjlhkgjhcjvbkljlhkgjhcgxhjl;hkgjhcgjhvbljhkgjhg</p>
-                    <p>sdjjsjdjbkfkkjkhvgvjkj;hkjghcgchjklj;kjlhkgjhcjvbkljlhkgjhcgxhjl;hkgjhcgjhvbljhkgjhg</p>
-                    <p>sdjjsjdjbkfkkjkhvgvjkj;hkjghcgchjklj;kjlhkgjhcjvbkljlhkgjhcgxhjl;hkgjhcgjhvbljhkgjhg</p>
-                    <p>sdjjsjdjbkfkkjkhvgvjkj;hkjghcgchjklj;kjlhkgjhcjvbkljlhkgjhcgxhjl;hkgjhcgjhvbljhkgjhg</p>
-                    <p>sdjjsjdjbkfkkjkhvgvjkj;hkjghcgchjklj;kjlhkgjhcjvbkljlhkgjhcgxhjl;hkgjhcgjhvbljhkgjhg</p>
-                    <p>sdjjsjdjbkfkkjkhvgvjkj;hkjghcgchjklj;kjlhkgjhcjvbkljlhkgjhcgxhjl;hkgjhcgjhvbljhkgjhg</p>
-                    <p>sdjjsjdjbkfkkjkhvgvjkj;hkjghcgchjklj;kjlhkgjhcjvbkljlhkgjhcgxhjl;hkgjhcgjhvbljhkgjhg</p>
-                  </div>
-                  <div class="card-toolbar d-grid gap-2 d-sm-flex justify-content-sm-center">
-                    <button type="button" style="    margin-left: 5px;
-                    " class="showme1 buttonnew btn btn-light me-2" data-bs-toggle="modal"
-                      data-bs-target="#exampleModalbd">Apply</button>
-                    <div class="modal fade" id="exampleModalbd" tabindex="-1" role="dialog"
-                      aria-labelledby="exampleModalLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content modal-content">
-                          <div class="modal-body overlay overlay-block">
-                            <div class="form-group">
-                              <form [formGroup]="employeeForm" class="contact-form" (submit)="sendEmail($event)">
-                                <div class="form-floating mb-7">
-                                  <input formControlName="name" type="text" class="form-control" id="name"
-                                    placeholder="Enter Name" name="user_name" />
-                                  <label for="name">Name</label>
-                                </div>
-                                <div class="form-floating mb-7"><input formControlName="email" type="email"
-                                    class="form-control" id="email" placeholder="Enter Email" name="user_email" /><label
-                                    for="email">Email address</label>
-                                </div>
-                                <div class="form-floating mb-7"><input formControlName="phone" type="tel"
-                                    class="form-control" id="phone" placeholder="Enter Phone Number"
-                                    name="user_phone" /><label for="phone">Phone
-                                    Number</label></div>
-                                <div class="form-floating mb-7">
-                                  <input formControlName="category" name="category" value="Business Developer"
-                                    type="text" class="form-control" id="category" name="category" readonly />
-                                  <label for="phone">Category
-                                  </label>
-                                </div>
-                                <div class="form-floating mb-7"><input formControlName="file" type="file"
-                                    class="form-control" id="file" name="my_file" /><label for="file">Attach
-                                    Resume</label>
-                                </div>
-
-                                <div class="modal-footer">
-                                  <button type="button" class="btn  btn-light  fw-bold"
-                                    data-bs-dismiss="modal">Close</button>
-                                  <input type="submit" value="Submit" class="btn btn-light ">
-                                </div>
-                              </form>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="card card-custom showhim card-border" style="border-radius:20px; margin-top: 10px;" id="kt_card_1_fsd">
-                  <div class="card-header">
-                    <h3 class="card-title align-items-start flex-column">
-                      <span class="card-label fw-bolder text-dark">Full Stack Developer</span>
-                      <span class="text-muted mt-1 fw-bold fs-7">Preview monthly events</span>
-                    </h3>
-                    <div class="card-toolbar">
-                      <button type="button" class="btn btn-light me-2" data-bs-toggle="modal"
-                        data-bs-target="#exampleModalfsd">Apply</button>
-                      <div class="modal fade" id="exampleModalfsd" tabindex="-1" role="dialog"
-                        aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                          <div class="modal-content modal-content">
-                            <div class="modal-body overlay overlay-block">
-                              <div class="form-group">
-                                <form [formGroup]="employeeForm" class="contact-form" (submit)="sendEmail($event)">
-                                  <div class="form-floating mb-7">
-                                    <input formControlName="name" type="text" class="form-control" id="name"
-                                      placeholder="Enter Name" name="user_name" />
-                                    <label for="name">Name</label>
-                                  </div>
-                                  <div class="form-floating mb-7"><input formControlName="email" type="email"
-                                      class="form-control" id="email" placeholder="Enter Email"
-                                      name="user_email" /><label for="email">Email address</label>
-                                  </div>
-                                  <div class="form-floating mb-7"><input formControlName="phone" type="tel"
-                                      class="form-control" id="phone" placeholder="Enter Phone Number"
-                                      name="user_phone" /><label for="phone">Phone
-                                      Number</label></div>
-                                  <div class="form-floating mb-7">
-                                    <input formControlName="category" name="category" value="Full Stack Developer"
-                                      type="text" class="form-control" id="category" name="category" readonly />
-                                    <label for="phone">Category
-                                    </label>
-                                  </div>
-                                  <div class="form-floating mb-7"><input formControlName="file" type="file"
-                                      class="form-control" id="file" name="my_file" /><label for="file">Attach
-                                      Resume</label>
-                                  </div>
-
-                                  <div class="modal-footer">
-                                    <button type="button" class="btn  btn-light  fw-bold"
-                                      data-bs-dismiss="modal">Close</button>
-                                    <input type="submit" value="Submit" class="btn btn-light ">
-                                  </div>
-                                </form>
+                              <div class="form-floating mb-7"><input formControlName="email" type="email"
+                                  class="form-control" id="email" placeholder="Enter Email"
+                                  name="user_email" /><label for="email">Email address<span class="error">*</span></label>
+                                  <span *ngIf="checkUserError('email', 'required') && this.employeeForm.controls['email']?.touched" class="error">This Field is required</span>
+                                <span *ngIf="checkUserError('email', 'email') && this.employeeForm.controls['email']?.touched" class="error">Please enter valid email</span>
                               </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-body showme">
-                    <p>Full Stack Developer 5 years experiance</p>
-                    <span>.</span>
-                    <span>.</span>
-                    <span>.</span>
-                  </div>
-                  <div class="card-body showme1">
-                    <p>Full Stack Developer 5 years experiance</p>
-                    <span>.</span>
-                    <span>.</span>
-                    <span>.</span>
-                    <p>sdjjsjdjbkfkkjkhvgvjkj;hkjghcgchjklj;kjlhkgjhcjvbkljlhkgjhcgxhjl;hkgjhcgjhvbljhkgjhg</p>
-                    <p>sdjjsjdjbkfkkjkhvgvjkj;hkjghcgchjklj;kjlhkgjhcjvbkljlhkgjhcgxhjl;hkgjhcgjhvbljhkgjhg</p>
-                    <p>sdjjsjdjbkfkkjkhvgvjkj;hkjghcgchjklj;kjlhkgjhcjvbkljlhkgjhcgxhjl;hkgjhcgjhvbljhkgjhg</p>
-                    <p>sdjjsjdjbkfkkjkhvgvjkj;hkjghcgchjklj;kjlhkgjhcjvbkljlhkgjhcgxhjl;hkgjhcgjhvbljhkgjhg</p>
-                    <p>sdjjsjdjbkfkkjkhvgvjkj;hkjghcgchjklj;kjlhkgjhcjvbkljlhkgjhcgxhjl;hkgjhcgjhvbljhkgjhg</p>
-                    <p>sdjjsjdjbkfkkjkhvgvjkj;hkjghcgchjklj;kjlhkgjhcjvbkljlhkgjhcgxhjl;hkgjhcgjhvbljhkgjhg</p>
-                    <p>sdjjsjdjbkfkkjkhvgvjkj;hkjghcgchjklj;kjlhkgjhcjvbkljlhkgjhcgxhjl;hkgjhcgjhvbljhkgjhg</p>
-                    <p>sdjjsjdjbkfkkjkhvgvjkj;hkjghcgchjklj;kjlhkgjhcjvbkljlhkgjhcgxhjl;hkgjhcgjhvbljhkgjhg</p>
-                    <p>sdjjsjdjbkfkkjkhvgvjkj;hkjghcgchjklj;kjlhkgjhcjvbkljlhkgjhcgxhjl;hkgjhcgjhvbljhkgjhg</p>
-                  </div>
-                  <div class="card-toolbar d-grid gap-2 d-sm-flex justify-content-sm-center">
-                    <button type="button" style="    margin-left: 5px;
-                    " class="showme1 buttonnew btn btn-light me-2" data-bs-toggle="modal"
-                      data-bs-target="#exampleModalfsd">Apply</button>
-                    <div class="modal fade" id="exampleModalfsd" tabindex="-1" role="dialog"
-                      aria-labelledby="exampleModalLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content modal-content">
-                          <div class="modal-body overlay overlay-block">
-                            <div class="form-group">
-                              <form [formGroup]="employeeForm" class="contact-form" (submit)="sendEmail($event)">
-                                <div class="form-floating mb-7">
-                                  <input formControlName="name" type="text" class="form-control" id="name"
-                                    placeholder="Enter Name" name="user_name" />
-                                  <label for="name">Name</label>
+                              <div class="form-floating mb-7"><input formControlName="phone" type="number"
+                                  class="form-control" id="phone" placeholder="Enter Phone Number"
+                                  name="user_phone" /><label for="phone">Phone
+                                  Number<span class="error">*</span></label>
+                                  <span *ngIf="checkUserError('phone', 'required') && this.employeeForm.controls['phone']?.touched" class="error">This Field is required</span>
                                 </div>
-                                <div class="form-floating mb-7"><input formControlName="email" type="email"
-                                    class="form-control" id="email" placeholder="Enter Email" name="user_email" /><label
-                                    for="email">Email address</label>
-                                </div>
-                                <div class="form-floating mb-7"><input formControlName="phone" type="tel"
-                                    class="form-control" id="phone" placeholder="Enter Phone Number"
-                                    name="user_phone" /><label for="phone">Phone
-                                    Number</label></div>
-                                <div class="form-floating mb-7">
-                                  <input formControlName="category" name="category" value="Full Stack Developer"
-                                    type="text" class="form-control" id="category" name="category" readonly />
-                                  <label for="phone">Category
-                                  </label>
-                                </div>
-                                <div class="form-floating mb-7"><input formControlName="file" type="file"
-                                    class="form-control" id="file" name="my_file" /><label for="file">Attach
-                                    Resume</label>
-                                </div>
-
-                                <div class="modal-footer">
-                                  <button type="button" class="btn  btn-light  fw-bold"
-                                    data-bs-dismiss="modal">Close</button>
-                                  <input type="submit" value="Submit" class="btn btn-light ">
-                                </div>
-                              </form>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="card card-custom showhim card-border" style="border-radius:20px; margin-top: 10px;" id="kt_card_1_net">
-                  <div class="card-header">
-                    <h3 class="card-title align-items-start flex-column">
-                      <span class="card-label fw-bolder text-dark">.Net Developer</span>
-                      <span class="text-muted mt-1 fw-bold fs-7">Preview monthly events</span>
-                    </h3>
-                    <div class="card-toolbar">
-                      <button type="button" class="btn btn-light me-2" data-bs-toggle="modal"
-                        data-bs-target="#exampleModalnet">Apply</button>
-                      <div class="modal fade" id="exampleModalnet" tabindex="-1" role="dialog"
-                        aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                          <div class="modal-content modal-content">
-                            <div class="modal-body overlay overlay-block">
-                              <div class="form-group">
-                                <form [formGroup]="employeeForm" class="contact-form" (submit)="sendEmail($event)">
-                                  <div class="form-floating mb-7">
-                                    <input formControlName="name" type="text" class="form-control" id="name"
-                                      placeholder="Enter Name" name="user_name" />
-                                    <label for="name">Name</label>
-                                  </div>
-                                  <div class="form-floating mb-7"><input formControlName="email" type="email"
-                                      class="form-control" id="email" placeholder="Enter Email"
-                                      name="user_email" /><label for="email">Email address</label>
-                                  </div>
-                                  <div class="form-floating mb-7"><input formControlName="phone" type="tel"
-                                      class="form-control" id="phone" placeholder="Enter Phone Number"
-                                      name="user_phone" /><label for="phone">Phone
-                                      Number</label></div>
-                                  <div class="form-floating mb-7">
-                                    <input formControlName="category" name="category" value=".Net Developer" type="text"
-                                      class="form-control" id="category" name="category" readonly />
-                                    <label for="phone">Category
-                                    </label>
-                                  </div>
-                                  <div class="form-floating mb-7"><input formControlName="file" type="file"
-                                      class="form-control" id="file" name="my_file" /><label for="file">Attach
-                                      Resume</label>
-                                  </div>
-
-                                  <div class="modal-footer">
-                                    <button type="button" class="btn  btn-light  fw-bold"
-                                      data-bs-dismiss="modal">Close</button>
-                                    <input type="submit" value="Submit" class="btn btn-light ">
-                                  </div>
-                                </form>
+                              <div class="form-floating mb-7">
+                                <input formControlName="category" name="category" [value]="category" type="text"
+                                  class="form-control" id="category" name="category" readonly />
+                                <label for="phone">Category
+                                </label>
                               </div>
-                            </div>
+                              <div class="form-floating mb-7"><input formControlName="file" type="file"
+                                  class="form-control" id="file" name="my_file" /><label for="file">Attach
+                                  Resume</label>
+                              </div>
+
+                              <div class="modal-footer">
+                                <button type="button" class="btn  btn-light  fw-bold"
+                                  data-bs-dismiss="modal">Close</button>
+                                <input type="submit" data-bs-dismiss="modal" [disabled]="!this.employeeForm.valid" value="Submit" class="btn btn-light ">
+                              </div>
+                            </form>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="card-body showme">
-                    <p>.Net Developer 5 years experiance</p>
-                    <span>.</span>
-                    <span>.</span>
-                    <span>.</span>
-                  </div>
-                  <div class="card-body showme1">
-                    <p>.Net Developer 5 years experiance</p>
-                    <span>.</span>
-                    <span>.</span>
-                    <span>.</span>
-                    <p>sdjjsjdjbkfkkjkhvgvjkj;hkjghcgchjklj;kjlhkgjhcjvbkljlhkgjhcgxhjl;hkgjhcgjhvbljhkgjhg</p>
-                    <p>sdjjsjdjbkfkkjkhvgvjkj;hkjghcgchjklj;kjlhkgjhcjvbkljlhkgjhcgxhjl;hkgjhcgjhvbljhkgjhg</p>
-                    <p>sdjjsjdjbkfkkjkhvgvjkj;hkjghcgchjklj;kjlhkgjhcjvbkljlhkgjhcgxhjl;hkgjhcgjhvbljhkgjhg</p>
-                    <p>sdjjsjdjbkfkkjkhvgvjkj;hkjghcgchjklj;kjlhkgjhcjvbkljlhkgjhcgxhjl;hkgjhcgjhvbljhkgjhg</p>
-                    <p>sdjjsjdjbkfkkjkhvgvjkj;hkjghcgchjklj;kjlhkgjhcjvbkljlhkgjhcgxhjl;hkgjhcgjhvbljhkgjhg</p>
-                    <p>sdjjsjdjbkfkkjkhvgvjkj;hkjghcgchjklj;kjlhkgjhcjvbkljlhkgjhcgxhjl;hkgjhcgjhvbljhkgjhg</p>
-                    <p>sdjjsjdjbkfkkjkhvgvjkj;hkjghcgchjklj;kjlhkgjhcjvbkljlhkgjhcgxhjl;hkgjhcgjhvbljhkgjhg</p>
-                    <p>sdjjsjdjbkfkkjkhvgvjkj;hkjghcgchjklj;kjlhkgjhcjvbkljlhkgjhcgxhjl;hkgjhcgjhvbljhkgjhg</p>
-                    <p>sdjjsjdjbkfkkjkhvgvjkj;hkjghcgchjklj;kjlhkgjhcjvbkljlhkgjhcgxhjl;hkgjhcgjhvbljhkgjhg</p>
-                  </div>
-                  <div class="card-toolbar d-grid gap-2 d-sm-flex justify-content-sm-center">
-                    <button type="button" style="    margin-left: 5px;
-                    " class="showme1 buttonnew btn btn-light me-2" data-bs-toggle="modal"
-                      data-bs-target="#exampleModalnet">Apply</button>
-                    <div class="modal fade" id="exampleModalnet" tabindex="-1" role="dialog"
-                      aria-labelledby="exampleModalLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content modal-content">
-                          <div class="modal-body overlay overlay-block">
-                            <div class="form-group">
-                              <form [formGroup]="employeeForm" class="contact-form" (submit)="sendEmail($event)">
-                                <div class="form-floating mb-7">
-                                  <input formControlName="name" type="text" class="form-control" id="name"
-                                    placeholder="Enter Name" name="user_name" />
-                                  <label for="name">Name</label>
-                                </div>
-                                <div class="form-floating mb-7"><input formControlName="email" type="email"
-                                    class="form-control" id="email" placeholder="Enter Email" name="user_email" /><label
-                                    for="email">Email address</label>
-                                </div>
-                                <div class="form-floating mb-7"><input formControlName="phone" type="tel"
-                                    class="form-control" id="phone" placeholder="Enter Phone Number"
-                                    name="user_phone" /><label for="phone">Phone
-                                    Number</label></div>
-                                <div class="form-floating mb-7">
-                                  <input formControlName="category" name="category" value=".Net Developer" type="text"
-                                    class="form-control" id="category" name="category" readonly />
-                                  <label for="phone">Category
-                                  </label>
-                                </div>
-                                <div class="form-floating mb-7"><input formControlName="file" type="file"
-                                    class="form-control" id="file" name="my_file" /><label for="file">Attach
-                                    Resume</label>
-                                </div>
-
-                                <div class="modal-footer">
-                                  <button type="button" class="btn  btn-light  fw-bold"
-                                    data-bs-dismiss="modal">Close</button>
-                                  <input type="submit" value="Submit" class="btn btn-light ">
-                                </div>
-                              </form>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                  <div class="modal-content modal-content">
-                    <div class="modal-body overlay overlay-block">
-                      <div class="form-group">
-                        <form [formGroup]="employeeForm" class="contact-form" (submit)="sendEmail($event)">
-                          <div class="form-floating mb-7">
-                            <input formControlName="name" type="text" class="form-control" id="name"
-                              placeholder="Enter Name" name="user_name" />
-                            <label for="name">Name</label>
-                          </div>
-                          <div class="form-floating mb-7"><input formControlName="email" type="email"
-                              class="form-control" id="email" placeholder="Enter Email" name="user_email" /><label
-                              for="email">Email address</label>
-                          </div>
-                          <div class="form-floating mb-7"><input formControlName="phone" type="tel"
-                              class="form-control" id="phone" placeholder="Enter Phone Number"
-                              name="user_phone" /><label for="phone">Phone
-                              Number</label></div>
-
-                          <div class="form-floating mb-7"><input formControlName="file" type="file"
-                              class="form-control" id="file" name="my_file" /><label for="file">Attach
-                              Resume</label>
-                          </div>
-
-                          <div class="modal-footer">
-                            <button type="button" class="btn  btn-light  fw-bold"
-                              data-bs-dismiss="modal">Close</button>
-                            <input type="submit" value="Submit" class="btn btn-light ">
-                          </div>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
 
 
 
@@ -971,7 +611,7 @@ License: For each use you must have a valid license purchased only from above li
 
 
                 <button type="button" class="btn btn-light me-2" data-bs-toggle="modal"
-                  data-bs-target="#exampleModal">Apply Here!</button>
+                  data-bs-target="#exampleModelwithoutCat">Apply Here!</button>
 
 
 

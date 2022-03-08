@@ -15,17 +15,7 @@ export class ContactFormComponent implements OnInit {
   constructor(private builder: FormBuilder) { }
 
   public sendEmail(e: Event) {
-    debugger
 
-    // this.contact.PostMessage(FormData).subscribe(
-    //   (response) =>{
-    //     location.href = 'https://mailthis.to/confirm'
-    //     console.log(response)
-    //   }, (error) =>{
-    //     console.warn(error.responseText)
-    //     console.log({error})
-    //   }
-    // )
     e.preventDefault();
     emailjs.sendForm('service_r32dyw6', 'template_hlu2p7e', e.target as HTMLFormElement, '64p8R75AxIDAOTt5q')
       .then((result: EmailJSResponseStatus) => {
