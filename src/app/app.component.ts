@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
-import { Router } from '@angular/router';
 import { ContactFormComponent } from './forms/contact-form.component';
+import swal from 'sweetalert2';
+
+
 
 
 
@@ -16,6 +18,7 @@ export class AppComponent implements OnInit {
   title = 'LandingPage';
   employeeForm!: FormGroup;
   category!: String;
+
 
   data: any[] = [{
     title: "HR Executive",
@@ -497,7 +500,6 @@ export class AppComponent implements OnInit {
     });
   }
   restrictNumber(event: any) {
-    debugger
     const pattern = /[0-9\+\-\ ]/;
     let inputChar = event.key;
 
@@ -509,23 +511,41 @@ export class AppComponent implements OnInit {
     this.category = text;
   }
   public sendEmail(e: Event, a: number = 0) {
-    debugger
     if (this.employeeForm.valid) {
 
       var template = "template_hlu2p7e";
       if (a === 1) {
         template = "template_anixppa";
       }
+      swal.fire("Success", "Email Sent Successfully!", "success")
       e.preventDefault();
       emailjs.sendForm('service_r32dyw6', template, e.target as HTMLFormElement, '64p8R75AxIDAOTt5q')
         .then((result: EmailJSResponseStatus) => {
           this.employeeForm.reset();
-          alert("Application submitted successfully.\nThank you for showing your interest...");
-
+          // alert("Application submitted successfully.\nThank you for showing your interest...");
 
         }, (error: any) => {
           console.log(error.text);
         });
+
+        // this.employeeForm.reset()
+        // Object.keys(this.employeeForm.controls).forEach(key => {
+        //   this.employeeForm.get(key)!.setErrors(null) ;
+        // });
+
+      // sgMail.setClient(new Client());
+      // sgMail.setApiKey("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");
+      // sgMail.send({
+      //   from: "harshpatel4905@gmail.com",
+      //   to: "harshpatel4905@gmail.com",
+      //   subject: "Test Email",
+      //   text: "This is a test email",
+      //   html: "<p>This is a test email</p>"
+      // }).then(result => {
+      //   console.log("Sent email");
+      // }, err => {
+      //   console.error(err);
+      // });
     }
   }
 
@@ -533,6 +553,12 @@ export class AppComponent implements OnInit {
     return this.employeeForm.controls[controlName].hasError(errorName);
   }
 
+  closeForm(form: any){
+    form.reset();
 
+    // Object.keys(form.controls).forEach(key => {
+    //   form.get(key).setErrors(null) ;
+    // });
+  }
 }
 

@@ -4375,9 +4375,11 @@ span.flatpickr-weekday {
   border: 0;
   border-radius: 0.25em;
   background: initial;
-  background-color: #7367f0;
+  background-color: #253460;
   color: #fff;
   font-size: 1em;
+  height: 35px;
+    width: 80px;
 }
 
 .swal2-styled.swal2-confirm:focus {
