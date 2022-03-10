@@ -1,36 +1,29 @@
 html {
   scroll-behavior: smooth;
- }
- body {
-  margin: 0;
- }
- h1 {
-  font-family: Arial;
-  color: red;
-  text-align: center;
- }
- .wrapper {
+}
+
+.wrapper {
   display: grid;
   grid-template-columns: repeat(3, 100%);
   overflow: hidden;
   scroll-behavior: smooth;
- }
- .wrapper section {
+}
+.wrapper section {
   width: 100%;
   position: relative;
   display: grid;
   grid-template-columns: repeat(5, auto);
   margin: 20px 0;
- }
- .wrapper section .item {
+}
+.wrapper section .item {
   padding: 0 2px;
   transition: 250ms all;
- }
- .wrapper section .item:hover {
+}
+.wrapper section .item:hover {
   margin: 0 40px;
   transform: scale(1.2);
- }
- .wrapper section a {
+}
+.wrapper section a {
   position: absolute;
   color: #fff;
   text-decoration: none;
@@ -40,21 +33,179 @@ html {
   padding: 20px;
   text-align: center;
   z-index: 1;
- }
- .wrapper section a:nth-of-type(1) {
+}
+.wrapper section a:nth-of-type(1) {
   top: 0;
   bottom: 0;
   left: 0;
   background: linear-gradient(-90deg, rgba(0, 0, 0, 0) 0%, black 100%);
- }
- .wrapper section a:nth-of-type(2) {
+}
+.wrapper section a:nth-of-type(2) {
   top: 0;
   bottom: 0;
   right: 0;
   background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, black 100%);
- }
- @media only screen and (max-width: 600px) {
-  a.arrow__btn {
-  display: none;
+}
+
+#container {
+  box-shadow: 0 0 10px 0 rgb(33 30 30 / 15%);
+  background: rgba(255, 255, 255, 0.9);
+  /* text-align: center; */
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 1em auto;
+  height: 100%;
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+}
+@media only screen and (max-width: 555px) {
+  #container {
+    flex-direction: column;
   }
- }
+  .product-image {
+    height: 285px;
+    width: 100% !important;
+  }
+
+  .product-details {
+    width: 100% !important;
+  }
+  .custom-image-fluid {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.product-details {
+  position: relative;
+  /* text-align: left; */
+  overflow: hidden;
+  padding: 30px;
+  height: 100%;
+  /* float: left; */
+  width: 70%;
+  /* margin: auto 0; */
+}
+
+#container .product-details h1 {
+  display: inline-block;
+  position: relative;
+  font-size: 30px;
+  color: #344055;
+  margin: 0;
+}
+
+#container .product-details > p {
+  /* text-align: center; */
+  font-size: 18px;
+  color: #7d7d7d;
+}
+.control {
+  position: absolute;
+  bottom: 20%;
+  left: 22.8%;
+}
+.btn {
+  transform: translateY(0px);
+  transition: 0.3s linear;
+  background: #809fff;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  color: #eee;
+  padding: 0;
+  margin: 0;
+}
+
+.btn:hover {
+  transform: translateY(-6px);
+  background: #1a66ff;
+}
+
+.btn span {
+  font-family: "Farsan", cursive;
+  transition: transform 0.3s;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  margin: 0;
+}
+.btn .price,
+.shopping-cart {
+  background: #333;
+  border: 0;
+  margin: 0;
+}
+
+.btn .price {
+  transform: translateX(-10%);
+  padding-right: 15px;
+}
+
+.btn .shopping-cart {
+  transform: translateX(-100%);
+  position: absolute;
+  background: #333;
+  z-index: 1;
+  left: 0;
+  top: 0;
+}
+
+.btn .buy {
+  z-index: 3;
+  font-weight: bolder;
+}
+
+.btn:hover .price {
+  transform: translateX(-110%);
+}
+
+.btn:hover .shopping-cart {
+  transform: translateX(0%);
+}
+
+.product-image {
+  transition: all 0.3s ease-out;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  /* height: 100%; */
+  /* float: right; */
+  width: 30%;
+  display: inline-block;
+}
+
+#container img {
+  width: 100%;
+  height: 100%;
+}
+
+.info {
+  background: rgba(27, 26, 26, 0.9);
+  font-family: "Bree Serif", serif;
+  transition: all 0.3s ease-out;
+  transform: translateX(-100%);
+  position: absolute;
+  line-height: 1.8;
+  text-align: left;
+  font-size: 105%;
+  cursor: no-drop;
+  color: #fff;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+.hr-custom {
+  box-shadow: 0 0 10px 1px;
+}
+
+@media only screen and (max-width: 600px) {
+  a.arrow__btn {
+    display: none;
+  }
+}

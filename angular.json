@@ -38,7 +38,6 @@
             ],
             "scripts": [
               "./src/assets/fullcalendar.bundle.js",
-              "./src/assets/plugins.bundle.js",
               "./src/assets/scripts.bundle.js",
               "./src/assets/widgets.js",
               "./node_modules/bootstrap/dist/js/bootstrap.min.js"

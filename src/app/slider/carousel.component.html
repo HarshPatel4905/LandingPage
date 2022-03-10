@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="carousel.component.css" />
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="carousel.component.css">
-</head>
-
-<body>
-  <!-- <div class="wrapper">
+  <body>
+    <!-- <div class="wrapper">
     <section id="section1">
       <a href="#section3" class="arrow__btn" style="border-radius: 10px;">‹</a>
       <div class="item">
@@ -51,54 +50,167 @@
     </section>
   </div> -->
 
-  <div id="kt_carousel_1_carousel" class="carousel carousel-custom slide" data-bs-ride="carousel"
-    data-bs-interval="2000">
-    <!--begin::Heading-->
-    <div class="d-flex align-items-center justify-content-between flex-wrap">
-      <!--begin::Label-->
-      <span class="fs-4 fw-bolder pe-2"></span>
-      <!--end::Label-->
+    <div
+      id="kt_carousel_1_carousel"
+      class="carousel carousel-custom slide"
+      data-bs-ride="carousel"
+      data-bs-interval="4000"
+    >
+      <!--begin::Heading-->
+      <div class="d-flex align-items-center justify-content-between flex-wrap">
+        <!--begin::Label-->
+        <span class="fs-4 fw-bolder pe-2"></span>
+        <!--end::Label-->
 
-      <!--begin::Carousel Indicators-->
-      <ol class="p-0 m-0 carousel-indicators carousel-indicators-dots">
-        <li data-bs-target="#kt_carousel_1_carousel" data-bs-slide-to="0" class="ms-1 active"></li>
-        <li data-bs-target="#kt_carousel_1_carousel" data-bs-slide-to="1" class="ms-1"></li>
-        <li data-bs-target="#kt_carousel_1_carousel" data-bs-slide-to="2" class="ms-1"></li>
-        <li data-bs-target="#kt_carousel_1_carousel" data-bs-slide-to="3" class="ms-1"></li>
-      </ol>
-      <!--end::Carousel Indicators-->
+        <!--begin::Carousel Indicators-->
+        <ol class="p-0 m-0 carousel-indicators carousel-indicators-dots">
+          <li
+            data-bs-target="#kt_carousel_1_carousel"
+            data-bs-slide-to="0"
+            class="ms-1 active"
+          ></li>
+          <li
+            data-bs-target="#kt_carousel_1_carousel"
+            data-bs-slide-to="1"
+            class="ms-1"
+          ></li>
+          <li
+            data-bs-target="#kt_carousel_1_carousel"
+            data-bs-slide-to="2"
+            class="ms-1"
+          ></li>
+          <li
+            data-bs-target="#kt_carousel_1_carousel"
+            data-bs-slide-to="3"
+            class="ms-1"
+          ></li>
+          <li
+            data-bs-target="#kt_carousel_1_carousel"
+            data-bs-slide-to="4"
+            class="ms-1"
+          ></li>
+        </ol>
+        <!--end::Carousel Indicators-->
+      </div>
+      <!--end::Heading-->
+
+      <!--begin::Carousel-->
+      <div class="carousel-inner">
+        <!--begin::Item-->
+        <div class="carousel-item active">
+          <div id="container">
+            <div class="product-image">
+              <img
+                src="/assets/Carousel 1.png"
+                alt="Image1"
+                class="img-fluid custom-image-fluid"
+              />
+            </div>
+            <div class="product-details">
+              <h2>Premium Subscriptions</h2>
+              <hr class="hr-custom" />
+
+              <p class="information">
+                Get access to premium subscriptions to leading OTTs like
+                Netflix, music platforms like Spotify, and many more!
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!--end::Item-->
+
+        <!--begin::Item-->
+        <div class="carousel-item">
+          <div id="container">
+            <div class="product-image">
+              <img
+                src="/assets/Carousel 2.png"
+                alt="Image1"
+                class="img-fluid custom-image-fluid"
+              />
+            </div>
+            <div class="product-details">
+              <h2>Coupons & Vouchers</h2>
+              <hr class="hr-custom" />
+
+              <p class="information">
+                Keep your loved ones and yourself happy with the latest fashion
+                accessories, clothing, gadgets and much more!
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--end::Item-->
+
+        <!--begin::Item-->
+        <div class="carousel-item">
+          <div id="container">
+            <div class="product-image">
+              <img
+                src="/assets/Carousel 3.png"
+                alt="Image1"
+                class="img-fluid custom-image-fluid"
+              />
+            </div>
+            <div class="product-details">
+              <h2>Vacations & Outings</h2>
+              <hr class="hr-custom" />
+
+              <p class="information">
+                We love keeping our star employees happy! Go on happening
+                luxurious vacations, on the house!
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--end::Item-->
+        <!--begin::Item-->
+        <div class="carousel-item">
+          <div id="container">
+            <div class="product-image">
+              <img
+                src="/assets/Carousel 4.png"
+                alt="Image1"
+                class="img-fluid custom-image-fluid"
+              />
+            </div>
+            <div class="product-details">
+              <h2>5-Day Working!</h2>
+              <hr class="hr-custom" />
+
+              <p class="information">
+                Chill out on weekends and enjoy a perfect work-life balance with
+                5-day working culture & flexible timings.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--end::Item-->
+        <!--begin::Item-->
+        <div class="carousel-item">
+          <div id="container">
+            <div class="product-image">
+              <img
+                src="/assets/Carousel 5.png"
+                alt="Image1"
+                class="img-fluid custom-image-fluid"
+              />
+            </div>
+            <div class="product-details">
+              <h2>Wide Exposure</h2>
+              <hr class="hr-custom" />
+
+              <p class="information">
+                Work on the latest technologies like cloud, blockchain, etc. &
+                take on international projects of different industries!
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--end::Item-->
+      </div>
+      <!--end::Carousel-->
     </div>
-    <!--end::Heading-->
-
-    <!--begin::Carousel-->
-    <div class="carousel-inner pt-8">
-      <!--begin::Item-->
-      <div class="carousel-item active">
-        5 days working company
-      </div>
-      <!--end::Item-->
-
-      <!--begin::Item-->
-      <div class="carousel-item">
-        Flexible timings
-      </div>
-      <!--end::Item-->
-
-      <!--begin::Item-->
-      <div class="carousel-item">
-        Only international clients/projects
-
-      </div>
-      <!--end::Item-->
-      <!--begin::Item-->
-      <div class="carousel-item">
-        Work from office
-      </div>
-      <!--end::Item-->
-    </div>
-    <!--end::Carousel-->
-  </div>
-
-</body>
-
+  </body>
 </html>

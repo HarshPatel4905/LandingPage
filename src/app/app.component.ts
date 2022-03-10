@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 import { ContactFormComponent } from './forms/contact-form.component';
 import swal from 'sweetalert2';
+import { HttpClient } from '@angular/common/http';
 
 
 
@@ -18,6 +19,8 @@ export class AppComponent implements OnInit {
   title = 'LandingPage';
   employeeForm!: FormGroup;
   category!: String;
+  files!: any;
+  SERVER_URL = "https://email-service-from-form.herokuapp.com/SendEmail";
 
 
   data: any[] = [{
@@ -478,6 +481,7 @@ export class AppComponent implements OnInit {
   constructor(
     public dialog: MatDialog,
     private formbuilder: FormBuilder,
+    private http: HttpClient
   ) { }
 
 
@@ -487,10 +491,17 @@ export class AppComponent implements OnInit {
       name: ['', { validators: [Validators.required], asyncValidators: [] }],
       email: new FormControl('', [Validators.required, Validators.email],),
       phone: ['', [Validators.required, Validators.maxLength(10),Validators.pattern('[0-9]{10}')]],
-      file: ''
+      file: ['']
     })
   }
 
+  onSelect(event:any)
+  {
+    if (event.target.files.length > 0) {
+      const file = event.target.files[0];
+      this.employeeForm.get('file')?.setValue(file);
+    }
+  }
 
 
   CommonApplyButton() {
@@ -507,26 +518,61 @@ export class AppComponent implements OnInit {
       event.preventDefault();
     }
   }
-  setCategory(text: string) {
+  setCategory(text: string = "") {
     this.category = text;
   }
+
+
+
+
   public sendEmail(e: Event, a: number = 0) {
     if (this.employeeForm.valid) {
+      var html = "";
+      html += "<p>Name: "+this.employeeForm.value['name']+"</p>";
+      html += "<p>Email: "+this.employeeForm.value['email']+"</p>";
+      html += "<p>Phone: "+this.employeeForm.value['phone']+"</p>";
+      if(this.category != null && this.category != ""){
+        html += "<p>Category: "+this.category+"</p>";
 
-      var template = "template_hlu2p7e";
-      if (a === 1) {
-        template = "template_anixppa";
       }
-      swal.fire("Success", "Email Sent Successfully!", "success")
-      e.preventDefault();
-      emailjs.sendForm('service_r32dyw6', template, e.target as HTMLFormElement, '64p8R75AxIDAOTt5q')
-        .then((result: EmailJSResponseStatus) => {
-          this.employeeForm.reset();
-          // alert("Application submitted successfully.\nThank you for showing your interest...");
 
-        }, (error: any) => {
-          console.log(error.text);
-        });
+
+      const formData = new FormData();
+
+      formData.append("ToEmail", "1");
+      formData.append("Subject", "2");
+      formData.append("Body", html);
+    formData.append('Attachments', this.employeeForm.get('file')?.value);
+
+    this.http.post<any>(this.SERVER_URL, formData).subscribe(
+      (res) => {this.employeeForm.reset();
+                swal.fire("Success", "Application submitted successfully.\nThank you for showing your interest...", "success");
+
+      },
+      (err) => console.log(err)
+      // debugger
+    //   for(let file of this.files){
+    //     formData.append("Attachments", file);
+    //  }
+      // formData.append("Attachments", this.files);
+      // for (const key of Object.keys(this.employeeForm.value)) {
+      //   const value = this.employeeForm.value[key];
+      //   formData.append(key, value);
+      // }
+
+      // this.http.post("https://localhost:44326/SendEmail",formData).subscribe(res=>{
+      //   swal.fire("Success", "Application submitted successfully.\nThank you for showing your interest...", "success")
+      // });
+
+      // e.preventDefault();
+      // emailjs.sendForm('service_r32dyw6', template, e.target as HTMLFormElement, '64p8R75AxIDAOTt5q')
+      //   .then((result: EmailJSResponseStatus) => {
+      //     this.employeeForm.reset();
+      //     // alert("Application submitted successfully.\nThank you for showing your interest...");
+
+      //   }, (error: any) => {
+      //     console.log(error.text);
+      //   });
 
         // this.employeeForm.reset()
         // Object.keys(this.employeeForm.controls).forEach(key => {
@@ -546,6 +592,11 @@ export class AppComponent implements OnInit {
       // }, err => {
       //   console.error(err);
       // });
+
+    );
+    Object.keys(this.employeeForm.controls).forEach(key => {
+      this.employeeForm.get(key)!.setErrors(null) ;
+       });
     }
   }
 

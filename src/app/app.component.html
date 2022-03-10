@@ -511,7 +511,7 @@ License: For each use you must have a valid license purchased only from above li
 
                               </div>
 
-                            <div class="form-floating mb-7"><input formControlName="file" type="file"
+                            <div class="form-floating mb-7"><input #fileUplaoder (change)="onSelect($event)" formControlName="file" type="file"
                                 class="form-control" id="file" name="my_file" /><label for="file">Attach
                                 Resume</label>
                             </div>
@@ -560,7 +560,7 @@ License: For each use you must have a valid license purchased only from above li
                                 </label>
                               </div>
                               <div class="form-floating mb-7"><input formControlName="file" type="file"
-                                  class="form-control" id="file" name="my_file" /><label for="file">Attach
+                                  class="form-control" id="file" #fileUplaoder (change)="onSelect($event)" name="my_file" /><label for="file">Attach
                                   Resume</label>
                               </div>
 
@@ -612,7 +612,7 @@ License: For each use you must have a valid license purchased only from above li
 
 
                 <button type="button" class="btn btn-light me-2" data-bs-toggle="modal"
-                  data-bs-target="#exampleModelwithoutCat">Apply Here!</button>
+                  data-bs-target="#exampleModelwithoutCat" (click)="setCategory()">Apply Here!</button>
 
 
 
