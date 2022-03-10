@@ -415,7 +415,7 @@ License: For each use you must have a valid license purchased only from above li
                     </div>
                     <div class="card-body showme1">
                       <h4>Job Description</h4>
-                      <hr class="hr-class-Desc">
+                      <hr class="hr-class">
                       <p>{{datas.JDTITLE}}</p>
                       <div *ngIf="datas.POINTS.length">
                         <ul *ngFor="let point of datas.POINTS">
@@ -426,47 +426,47 @@ License: For each use you must have a valid license purchased only from above li
 
                       <div *ngIf="datas.Responsibility.length">
                         <h4>Responsibility</h4>
-                        <hr class="hr-class-loc">
+                        <hr class="hr-class">
                         <ul *ngFor="let resp of datas.Responsibility">
                           <li>{{resp}}</li>
                         </ul>
                       </div>
                       <div *ngIf="datas.basicRequirement.length">
                         <h4>Basic Requirement</h4>
-                        <hr class="hr-class-skills">
+                        <hr class="hr-class">
                         <ul *ngFor="let basic of datas.basicRequirement">
                           <li>{{basic}}</li>
                         </ul>
                       </div>
                       <div *ngIf="datas.goodTO.length">
                         <h4>Good to have</h4>
-                        <hr class="hr-class-loc">
+                        <hr class="hr-class">
                         <ul *ngFor="let good of datas.goodTO">
                           <li>{{good}}</li>
                         </ul>
                       </div>
                       <div>
                         <h4>Skillset Required</h4>
-                        <hr class="hr-class-skills">
+                        <hr class="hr-class">
                         <ul *ngFor="let skill of datas.skills">
                           <li>{{skill}}</li>
                         </ul>
                       </div>
                       <div *ngIf="datas.PreferedQualifications.length">
                         <h4>Prefered Qualification</h4>
-                        <hr class="hr-class-prequals">
+                        <hr class="hr-class">
                         <ul *ngFor="let prefered of datas.PreferedQualifications">
                           <li>{{prefered}}</li>
                         </ul>
                       </div>
                       <div>
                         <h4>Job Location</h4>
-                        <hr class="hr-class-loc">
+                        <hr class="hr-class">
                         <p>{{datas.Location}}</p>
                       </div>
                       <div>
                         <h4>Qualification</h4>
-                        <hr class="hr-class-quals">
+                        <hr class="hr-class">
                         <p>{{datas.Qualification}}</p>
                       </div>
 

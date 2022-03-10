@@ -200,8 +200,11 @@ html {
   left: 0;
   top: 0;
 }
-.hr-custom {
-  box-shadow: 0 0 10px 1px;
+.hr-class {
+  height: 4px;
+  width: 43px;
+    background-color: #01185c;
+    opacity: 1 !important;
 }
 
 @media only screen and (max-width: 600px) {

@@ -128,33 +128,9 @@
 }
 
 
-.hr-class-Desc {
-  height: 2px;
-  width: 9.5%;
-    box-shadow: 0 0 10px 1px;
+.hr-class {
+  height: 4px;
+  width: 43px;
     background-color: #01185c;
-}
-.hr-class-skills {
-  height: 2px;
-  width: 10%;
-    box-shadow: 0 0 10px 1px;
-    background-color: #01185c;
-}
-.hr-class-prequals {
-  height: 2px;
-  width: 13%;
-    box-shadow: 0 0 10px 1px;
-    background-color: #01185c;
-}
-.hr-class-loc {
-  height: 2px;
-  width: 7.8%;
-    box-shadow: 0 0 10px 1px;
-    background-color: #01185c;
-}
-.hr-class-quals {
-  height: 2px;
-  width: 8%;
-    box-shadow: 0 0 10px 1px;
-    background-color: #01185c;
+    opacity: 1 !important;
 }
