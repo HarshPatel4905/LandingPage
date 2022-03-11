@@ -59,8 +59,7 @@
   }
 }
 
-.btn-about{
-}
+
 
 .showme{
   opacity: 1;
@@ -83,9 +82,7 @@
 
 
 
-.showhim{
 
-}
 .showhim:hover .showme{
   opacity: 0;
   display: none;

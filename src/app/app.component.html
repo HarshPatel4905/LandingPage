@@ -46,6 +46,13 @@ License: For each use you must have a valid license purchased only from above li
 <!--begin::Body-->
 
 <body id="kt_body" style="background-color: white;" class="header-fixed header-tablet-and-mobile-fixed toolbar-enabled">
+  <ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="black"
+  type="ball-scale-multiple">
+  <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>
   <div class="header-menu align-items-stretch drawer drawer-start" data-kt-drawer="false"
     data-kt-drawer-name="header-menu" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true"
     data-kt-drawer-width="{default:'200px', '300px': '250px'}" data-kt-drawer-direction="start"
@@ -511,16 +518,17 @@ License: For each use you must have a valid license purchased only from above li
 
                               </div>
 
-                            <div class="form-floating mb-7"><input #fileUplaoder (change)="onSelect($event)" formControlName="file" type="file"
+                            <div class="form-floating mb-7"><input #fileUplaoder (change)="onSelect($event)" formControlName="file" type="file" accept=".pdf"
                                 class="form-control" id="file" name="my_file" /><label for="file">Attach
                                 Resume</label>
                             </div>
 
                             <div class="modal-footer">
                               <button type="button" class="btn  btn-light  fw-bold"
-                                data-bs-dismiss="modal" (click)="closeForm(employeeForm)">Close</button>
-                              <input type="submit" data-bs-dismiss="modal" [disabled]="!this.employeeForm.valid" value="Submit"  class="btn btn-light " >
+                              data-bs-dismiss="modal" (click)="closeForm(employeeForm)">Close</button>
+                              <input type="submit" data-bs-dismiss="modal" [disabled]="!this.employeeForm.valid" value="Submit" class="btn btn-light " >
                             </div>
+
                           </form>
                         </div>
                       </div>

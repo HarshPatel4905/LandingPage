@@ -5,8 +5,7 @@ import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 import { ContactFormComponent } from './forms/contact-form.component';
 import swal from 'sweetalert2';
 import { HttpClient } from '@angular/common/http';
-
-
+import { NgxSpinnerService } from 'ngx-spinner';
 
 
 
@@ -21,8 +20,10 @@ export class AppComponent implements OnInit {
   category!: String;
   files!: any;
   SERVER_URL = "https://email-service-from-form.herokuapp.com/SendEmail";
+  // SERVER_URL = "https://localhost:44326/SendEmail";
 
 
+//
   data: any[] = [{
     title: "HR Executive",
     JDTITLE: "At ConvergeSol, we are always looking to strengthen our organization by adding the best available talent to our staff. We're seeking a HR Executive - Talent Acquisition to help us source, identify, screen, and hire individuals for various roles in our company. Our ideal candidate will have excellent communication and organizational skills, 2-3 years' experience in talent acquisition, proficiency in Applicant Tracking Systems, and the ability to devise sourcing strategies for potential applicants. This role requires a candidate with excellent interpersonal skills as you'll often be asked to work closely with others across different departments.",
@@ -481,22 +482,23 @@ export class AppComponent implements OnInit {
   constructor(
     public dialog: MatDialog,
     private formbuilder: FormBuilder,
-    private http: HttpClient
+    private http: HttpClient,
+    private spinner:NgxSpinnerService
   ) { }
 
 
 
   ngOnInit(): void {
+
     this.employeeForm = this.formbuilder.group({
       name: ['', { validators: [Validators.required], asyncValidators: [] }],
       email: new FormControl('', [Validators.required, Validators.email],),
-      phone: ['', [Validators.required, Validators.maxLength(10),Validators.pattern('[0-9]{10}')]],
+      phone: ['', [Validators.required, Validators.maxLength(10), Validators.pattern('[0-9]{10}')]],
       file: ['']
     })
   }
 
-  onSelect(event:any)
-  {
+  onSelect(event: any) {
     if (event.target.files.length > 0) {
       const file = event.target.files[0];
       this.employeeForm.get('file')?.setValue(file);
@@ -528,75 +530,94 @@ export class AppComponent implements OnInit {
   public sendEmail(e: Event, a: number = 0) {
     if (this.employeeForm.valid) {
       var html = "";
-      html += "<p>Name: "+this.employeeForm.value['name']+"</p>";
-      html += "<p>Email: "+this.employeeForm.value['email']+"</p>";
-      html += "<p>Phone: "+this.employeeForm.value['phone']+"</p>";
-      if(this.category != null && this.category != ""){
-        html += "<p>Category: "+this.category+"</p>";
+      html += "<p>Name: " + this.employeeForm.value['name'] + "</p>";
+      html += "<p>Email: " + this.employeeForm.value['email'] + "</p>";
+      html += "<p>Phone: " + this.employeeForm.value['phone'] + "</p>";
+      if (this.category != null && this.category != "") {
+        html += "<p>Category: " + this.category + "</p>";
 
       }
+
+      var html1 = "";
+      html1 += "<p>Hello " + this.employeeForm.value['name'] + ",</p>";
+      if (this.category != null && this.category != "") {
+        html1 += "<p>We always look forward to go through applications of great people who’d like to work with us at ConvergeSol. Thank you for applying for a "+ this.category +" position with us,and here’s a confirmation that we received your application. One of our recruiters will contact you shortly to let you know about the status of your application.You can read more about us on our company career page or current opening https://www.convergesolution.com/current-openings. If you’ve got any questions you’re welcome to contact at ritom.das@convergesolution.com</p>";
+      }else{
+        html1 += "<p>We always look forward to go through applications of great people who’d like to work with us at ConvergeSol. Thank you for applying for a position with us,and here’s a confirmation that we received your application. One of our recruiters will contact you shortly to let you know about the status of your application.You can read more about us on our company career page or current opening https://www.convergesolution.com/current-openings. If you’ve got any questions you’re welcome to contact at ritom.das@convergesolution.com.</p>";
+      }
+      html1 += "<p>Regards,"+"<br>"+" Ritom Das "+"<br>"+" HR Executive "+"<br>"+" M: 9748372819 "+"<br>"+" E: ritom.das@convergesolution.com "+"<br>"+" www.convergesolution.com</p>"
+      // html1 += "<p>Regards</p>";
+      // html1 += "<p>Ritom Das</p>";
+      // html1 += "<p>HR Executive</p>";
+      // html1 += "<p>M: 9748372819</p>";
+      // html1 += "<p>E: ritom.das@convergesolution.com</p>";
+      // html1 += "<p>www.convergesolution.com</p>";
 
 
       const formData = new FormData();
 
-      formData.append("ToEmail", "1");
+      formData.append("ToEmail", this.employeeForm.value['email']);
       formData.append("Subject", "2");
-      formData.append("Body", html);
-    formData.append('Attachments', this.employeeForm.get('file')?.value);
+      formData.append("Body1", html);
+      formData.append("Body2", html1);
+      formData.append('Attachments', this.employeeForm.get('file')?.value);
+      this.spinner.show();
 
-    this.http.post<any>(this.SERVER_URL, formData).subscribe(
-      (res) => {this.employeeForm.reset();
-                swal.fire("Success", "Application submitted successfully.\nThank you for showing your interest...", "success");
+      this.http.post<any>(this.SERVER_URL, formData).subscribe(
+        (res) => {
+          this.employeeForm.reset();
+          this.spinner.hide();
+          swal.fire("Success", "Application submitted successfully.\nThank you for showing your interest...", "success");
 
-      },
-      (err) => console.log(err)
-      // debugger
-    //   for(let file of this.files){
-    //     formData.append("Attachments", file);
-    //  }
-      // formData.append("Attachments", this.files);
-      // for (const key of Object.keys(this.employeeForm.value)) {
-      //   const value = this.employeeForm.value[key];
-      //   formData.append(key, value);
-      // }
+        },
+        (err) => console.log(err)
+        // debugger
+        //   for(let file of this.files){
+        //     formData.append("Attachments", file);
+        //  }
+        // formData.append("Attachments", this.files);
+        // for (const key of Object.keys(this.employeeForm.value)) {
+        //   const value = this.employeeForm.value[key];
+        //   formData.append(key, value);
+        // }
 
-      // this.http.post("https://localhost:44326/SendEmail",formData).subscribe(res=>{
-      //   swal.fire("Success", "Application submitted successfully.\nThank you for showing your interest...", "success")
-      // });
+        // this.http.post("https://localhost:44326/SendEmail",formData).subscribe(res=>{
+        //   swal.fire("Success", "Application submitted successfully.\nThank you for showing your interest...", "success")
+        // });
 
-      // e.preventDefault();
-      // emailjs.sendForm('service_r32dyw6', template, e.target as HTMLFormElement, '64p8R75AxIDAOTt5q')
-      //   .then((result: EmailJSResponseStatus) => {
-      //     this.employeeForm.reset();
-      //     // alert("Application submitted successfully.\nThank you for showing your interest...");
+        // e.preventDefault();
+        // emailjs.sendForm('service_r32dyw6', template, e.target as HTMLFormElement, '64p8R75AxIDAOTt5q')
+        //   .then((result: EmailJSResponseStatus) => {
+        //     this.employeeForm.reset();
+        //     // alert("Application submitted successfully.\nThank you for showing your interest...");
 
-      //   }, (error: any) => {
-      //     console.log(error.text);
-      //   });
+        //   }, (error: any) => {
+        //     console.log(error.text);
+        //   });
 
         // this.employeeForm.reset()
         // Object.keys(this.employeeForm.controls).forEach(key => {
         //   this.employeeForm.get(key)!.setErrors(null) ;
         // });
 
-      // sgMail.setClient(new Client());
-      // sgMail.setApiKey("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");
-      // sgMail.send({
-      //   from: "harshpatel4905@gmail.com",
-      //   to: "harshpatel4905@gmail.com",
-      //   subject: "Test Email",
-      //   text: "This is a test email",
-      //   html: "<p>This is a test email</p>"
-      // }).then(result => {
-      //   console.log("Sent email");
-      // }, err => {
-      //   console.error(err);
-      // });
+        // sgMail.setClient(new Client());
+        // sgMail.setApiKey("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");
+        // sgMail.send({
+        //   from: "harshpatel4905@gmail.com",
+        //   to: "harshpatel4905@gmail.com",
+        //   subject: "Test Email",
+        //   text: "This is a test email",
+        //   html: "<p>This is a test email</p>"
+        // }).then(result => {
+        //   console.log("Sent email");
+        // }, err => {
+        //   console.error(err);
+        // });
 
-    );
-    Object.keys(this.employeeForm.controls).forEach(key => {
-      this.employeeForm.get(key)!.setErrors(null) ;
-       });
+      );
+      Object.keys(this.employeeForm.controls).forEach(key => {
+        this.employeeForm.get(key)!.setErrors(null);
+      });
     }
   }
 
@@ -604,7 +625,7 @@ export class AppComponent implements OnInit {
     return this.employeeForm.controls[controlName].hasError(errorName);
   }
 
-  closeForm(form: any){
+  closeForm(form: any) {
     form.reset();
 
     // Object.keys(form.controls).forEach(key => {

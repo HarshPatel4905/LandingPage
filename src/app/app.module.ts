@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
+import {NgxSpinnerModule} from "ngx-spinner";
 
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -35,7 +36,8 @@ import { ContactFormComponent } from './forms/contact-form.component';
     MatInputModule,
     MatButtonModule,
     MatSelectModule,
-    RouterModule
+    RouterModule,
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
