@@ -36960,7 +36960,7 @@ a:hover {
   justify-content: space-between;
   align-items: stretch;
   flex-wrap: wrap;
-  min-height: 70px;
+  min-height: 20px;
   padding: 0 2.25rem;
   background-color: transparent;
 }
@@ -37204,6 +37204,7 @@ a:hover {
 @media (min-width: 1400px) {
   .card.card-xxl-stretch {
     height: calc(100% - var(--bs-gutter-y));
+    border-radius:20px;
   }
   .card.card-xxl-stretch-75 {
     height: calc(75% - var(--bs-gutter-y));

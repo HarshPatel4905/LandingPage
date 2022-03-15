@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, ViewChild, ElementRef, OnInit } from "@angular/core";
+import EmblaCarousel from "embla-carousel";
+import * as Options  from "embla-carousel/components/Options";
 
 @Component({
   selector: 'app-carousel',
@@ -9,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarouselComponent implements OnInit {
 
+
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+
+
+
     // console.log('Hello in script')
     // var i =0;
     // var list=['section1','section2','section3']

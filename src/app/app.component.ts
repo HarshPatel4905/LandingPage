@@ -184,7 +184,7 @@ export class AppComponent implements OnInit {
     Qualification: "BCA/MCA/BTech/MscIT"
   },
   {
-    title: "ANGULAR DEVELOPER",
+    title: "Angular Developer",
     JDTITLE: "We are urgently looking for an Angular Developer for the Ahmedabad location ( Work from home).",
     POINTS: ["Build modular, testable, and reusable front-end modules",
       "Contribute in all phases of the feature release cycle",
